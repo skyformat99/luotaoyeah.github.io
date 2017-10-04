@@ -1,5 +1,5 @@
 global:
-  search_input_hint: "输入感兴趣的关键字"
+  search_input_hint: "搜索"
 
 post:
   continue_reading: "阅读全文…"

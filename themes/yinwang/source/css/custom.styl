@@ -16,6 +16,7 @@ h6 {
 }
 
 a {
+  color: #666666;
   cursor: pointer;
 }
 
@@ -25,8 +26,14 @@ a:hover, a:focus {
   text-decoration none;
 }
 
+.panel > .list-group .list-group-item {
+  padding: 0;
+}
+
 .panel > .list-group .list-group-item a {
   font-size: 16px;
+  display: block;
+  padding: 10px 15px;
 }
 
 .navbar-nav {
@@ -75,4 +82,14 @@ pre, code {
 
 .headerlink {
   display: none;
+}
+
+figure {
+  border-radius: 2px;
+}
+
+img {
+  box-shadow: none;
+  border-radius: 3px;
+  max-width: 100%;
 }

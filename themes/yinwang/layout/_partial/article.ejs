@@ -4,24 +4,12 @@
 </li>
 <% } else { %>
 
-<h1 class="title"><%= post.title %></h1>
-<!---
-<div style="text-align:center;margin-top: -10px;">
-<div class="article-category">
-<%- date(post.date, '发表于YYYY年M月D日') %>
-
-<% if (post.categories && post.categories.length){ %>
-    <%- list_categories(post.categories, {
-    show_count: false,
-    class: 'article-category',
-    style: 'none',
-    separator: ' | '
-}) %>
-<% } %>
-
---->
+<div class="row">
+    <div class="col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="article-content"><h1 class="title"><%= post.title %></h1>
+            <%- post.content %>
+            <%- partial('_partial/afterfooter') %></div>
+    </div>
 </div>
-
-<%- post.content %>
-<%- partial('_partial/afterfooter') %>
+</div>
 <% } %>

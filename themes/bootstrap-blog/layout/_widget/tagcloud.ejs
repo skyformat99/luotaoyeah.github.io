@@ -1,8 +1,12 @@
 <% if (site.tags.length){ %>
-  <div class="sidebar-module">
-    <h4>Tag Cloud</h4>
-    <p class="tagcloud">
-      <%- tagcloud() %>
-    </p>
-  </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAG CLOUD</h3>
+    </div>
+    <div class="panel-body">
+        <p class="tagcloud">
+            <%- tagcloud() %>
+        </p>
+    </div>
+</div>
 <% } %>

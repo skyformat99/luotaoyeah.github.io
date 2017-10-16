@@ -11,8 +11,9 @@
 /* Globals */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+  font-family: '微软雅黑', 'Microsoft YaHei UI', '宋体', 'SimSun', Monaco, "Times New Roman", Times, serif;
+  color: #555555;
+  margin-top: 73px;
 }
 
 h1, .h1,
@@ -23,9 +24,8 @@ h5, .h5,
 h6, .h6 {
   margin-top: 1em;
   margin-bottom: 15px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #333;
+  color: #333333;
 }
 
 p {
@@ -33,100 +33,26 @@ p {
 }
 
 code {
-  background-color: #eeeeee;
+  background-color: #EEEEEE;
   font-size: 80%;
 }
 
-.fa { margin-right: 0.25em; }
+.fa {
+  margin-right: 0.25em;
+}
 
 /* Buttons */
 .btn {
   border-radius: 30px;
 }
+
 .btn-primary {
-  background-color: #428bca;
-  border-color: #337ab7;
+  background-color: #428BCA;
+  border-color: #337AB7;
 }
-.nav-pills>li>a {
+
+.nav-pills > li > a {
   border-radius: 30px;
-}
-
-/* Override Bootstrap's default container width */
-@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
-}
-
-/*
- * Masthead for nav
- */
-
-.navbar {
-  background-color: #428bca;
-  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
-          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
-}
-
-.navbar-inverse { border: 0; }
-
-.navbar-inverse .navbar-toggle {
-  border-color: #cdddeb;
-}
-.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #cdddeb;
-}
-
-.navbar-inverse .navbar-toggle:focus,
-.navbar-inverse .navbar-toggle:hover {
-  background-color: #65A2D6;
-}
-
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav>li>a {
-  color: #cdddeb;
-  font-weight: 500;
-}
-
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: #cdddeb;
-}
-
-.navbar-inverse .navbar-nav>li>a.active {
-  color: #fff;
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-    min-height: 40px;
-  }
-
-  /** The following may need modification depending on
-      the size of your `navbar-brand` (if enabled) */
-  #main-menu-navbar {
-    margin-left: -30px;
-  }
-  .navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  /** ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
-
-  .navbar-inverse .navbar-nav>li>a.active:after {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    margin-left: -5px;
-    vertical-align: middle;
-    content: " ";
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid;
-    border-left: 5px solid transparent;
-  }
 }
 
 /*
@@ -136,15 +62,17 @@ code {
 .blog-header {
   padding-bottom: 20px;
 }
+
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: normal;
 }
+
 .blog-description {
   font-size: 20px;
-  color: #999;
+  color: #999999;
 }
 
 /*
@@ -155,6 +83,7 @@ code {
   font-size: 18px;
   line-height: 1.5;
 }
+
 .blog-main > article:last-of-type {
   margin-bottom: 30px;
 }
@@ -164,15 +93,18 @@ code {
   padding: 15px;
   margin: 0 -15px 15px;
 }
+
 .sidebar-module h4 {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 .sidebar-module-inset {
   padding: 15px;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   border-radius: 4px;
 }
+
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
 .sidebar-module-inset ol:last-child {
@@ -183,10 +115,10 @@ code {
   padding-left: 0;
   list-style: none;
 }
+
 .sidebar-module-list-child {
   padding-left: 25px;
 }
-
 
 /*
  * Blog posts
@@ -200,23 +132,27 @@ code {
   margin-top: 0;
   margin-bottom: 5px;
 }
+
 .article-header h1 a {
-  color: #333;
+  color: #333333;
 }
+
 .article-header h1 a:hover {
-  color: #23527c;
+  color: #23527C;
   text-decoration: none;
 }
 
 .article-meta {
   margin-bottom: 20px;
-  color: #999;
+  color: #999999;
   font-size: 0.9em;
 }
+
 .article-meta > * {
   display: inline-block;
   margin-right: 15px;
 }
+
 .article-meta a {
   color: inherit;
 }
@@ -224,19 +160,22 @@ code {
 .article-entry .article-more-link {
   margin: 15px 0;
 }
+
 .article-entry .thumbnail .caption {
   padding: 0;
 }
-.article-entry>*:last-child {
+
+.article-entry > *:last-child {
   margin-bottom: 15px;
 }
 
 /* article footer content */
 .article-footer {
   font-size: 0.85em;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #EEEEEE;
   padding-top: 15px;
 }
+
 .article-footer:after { /* clearfix */
   content: " ";
   visibility: hidden;
@@ -244,12 +183,14 @@ code {
   height: 0;
   clear: both;
 }
+
 .article-footer a {
-  color: #999;
+  color: #999999;
   text-decoration: none;
 }
+
 .article-footer a:hover {
-  color: #666;
+  color: #666666;
   text-decoration: underline;
 }
 
@@ -263,12 +204,12 @@ code {
 
 .archive-year-wrap a,
 .archive-article .article-datetime a {
-  color: #333;
+  color: #333333;
   text-decoration: none;
 }
 
 .archive-article .article-datetime a {
-  color: #999;
+  color: #999999;
   text-decoration: none;
 }
 
@@ -278,19 +219,23 @@ code {
 #page-nav {
   text-align: center;
 }
+
 #page-nav .pagination {
   margin-top: 0;
   margin-bottom: 30px;
 }
-#page-nav .pagination .active>* {
-  background-color: #428bca;
-  border-color: #428bca;
+
+#page-nav .pagination .active > * {
+  background-color: #428BCA;
+  border-color: #428BCA;
 }
-#page-nav .pagination>li:last-child>* {
+
+#page-nav .pagination > li:last-child > * {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-#page-nav .pagination>li:first-child>* {
+
+#page-nav .pagination > li:first-child > * {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
@@ -301,11 +246,51 @@ code {
 
 .blog-footer {
   padding: 40px 0;
-  color: #999;
+  color: #999999;
   text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+  background-color: #F9F9F9;
+  border-top: 1px solid #E5E5E5;
 }
+
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.navbar-default {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.navbar-header {
+  padding: 1px;
+}
+
+.navbar-nav {
+  padding: 1px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  border-radius: 3px;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #E7E7E7;
+}
+
+.navbar-brand {
+  padding: 16px 15px 14px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 16px;
+    padding-bottom: 14px;
+  }
+}
+
+.list-group-item a:hover {
+  background: #E7E7E7;
 }

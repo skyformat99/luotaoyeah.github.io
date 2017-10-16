@@ -1,8 +1,9 @@
 # Header
-navbar_brand: false
+navbar_brand: LUOTAO'S BLOG
 menu:
-  Home: index.html
-  Archives: archives/
+  HOME: index.html
+  ARCHIVES: archives/
+  GITHUB: http://www.github.com/luotaoyeah
 rss: /atom.xml
 
 # Content
@@ -18,9 +19,9 @@ widgets:
 - archive
 - recent_posts
 about_widget_content: >
-  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod.
-  Cras mattis consectetur purus sit amet fermentum. Aenean
-  lacinia bibendum nulla sed consectetur.</p>
+  luotao
+  <br/>
+  <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
 
 # widget behavior
 archive_type: 'monthly'
@@ -28,7 +29,7 @@ show_count: false
 
 # Miscellaneous
 google_analytics:
-favicon:
+favicon: /favicon.png
 twitter_id:
 google_plus:
 fb_admins:

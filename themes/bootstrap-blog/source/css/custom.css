@@ -14,6 +14,7 @@ body {
   font-family: '微软雅黑', 'Microsoft YaHei UI', '宋体', 'SimSun', Monaco, "Times New Roman", Times, serif;
   color: #555555;
   margin-top: 73px;
+  overflow-y: scroll;
 }
 
 h1, .h1,
@@ -43,16 +44,11 @@ code {
 
 /* Buttons */
 .btn {
-  border-radius: 30px;
-}
-
-.btn-primary {
-  background-color: #428BCA;
-  border-color: #337AB7;
+  border-radius: 3px;
 }
 
 .nav-pills > li > a {
-  border-radius: 30px;
+  border-radius: 3px;
 }
 
 /*
@@ -80,8 +76,7 @@ code {
  */
 
 .blog-main {
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
 }
 
 .blog-main > article:last-of-type {
@@ -137,11 +132,6 @@ code {
   color: #333333;
 }
 
-.article-header h1 a:hover {
-  color: #23527C;
-  text-decoration: none;
-}
-
 .article-meta {
   margin-bottom: 20px;
   color: #999999;
@@ -172,8 +162,8 @@ code {
 /* article footer content */
 .article-footer {
   font-size: 0.85em;
-  border-top: 1px solid #EEEEEE;
-  padding-top: 15px;
+  border: none;
+  padding: 0;
 }
 
 .article-footer:after { /* clearfix */
@@ -220,26 +210,6 @@ code {
   text-align: center;
 }
 
-#page-nav .pagination {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-#page-nav .pagination .active > * {
-  background-color: #428BCA;
-  border-color: #428BCA;
-}
-
-#page-nav .pagination > li:last-child > * {
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-#page-nav .pagination > li:first-child > * {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-
 /*
  * Footer
  */
@@ -261,6 +231,7 @@ code {
   border-left: none;
   border-right: none;
   border-radius: 0;
+  border-color: #DDDDDD;
 }
 
 .navbar-header {
@@ -292,5 +263,131 @@ code {
 }
 
 .list-group-item a:hover {
-  background: #E7E7E7;
+  background: #F9F9F9;
+}
+
+.blog-footer {
+  padding: 10px;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  color: #555555;
+  background-color: #FFFFFF;
+  border-color: #DDDDDD;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.panel {
+  border-radius: 3px;
+}
+
+.list-group-item > .badge {
+  position: absolute;
+  right: 5px;
+  top: 13px;
+}
+
+.panel-article .panel-title {
+  font-weight: bold;
+}
+
+.panel-article .panel-body {
+  padding: 30px;
+}
+
+.article-entry img {
+  margin: 5px 0;
+}
+
+.article-tag-list-link:before {
+  content: '#';
+}
+
+.article-entry img, .article-entry video {
+  display: inline-block;
+}
+
+.article-date:before {
+  content: "";
+}
+
+.article-category-link:before {
+  content: "&";
+}
+
+.article-meta {
+  color: #999999;
+  font-size: 0.9em;
+  margin: -30px -30px 20px -30px;
+  padding: 10px 30px;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  background: #F9F9F9;
+}
+
+#article-nav > li > a:hover {
+  background: #F9F9F9;
+  border: 1px solid #337AB7;
+}
+
+#article-nav-older {
+  text-align: left;
+}
+
+#article-nav-newer {
+  text-align: right;
+}
+
+.nav > li > a.article-nav-link-wrap {
+  padding: 10px;
+}
+
+.label {
+  font-weight: normal;
+}
+
+.table td.code {
+  border: none;
+  padding: 0;
+}
+
+pre {
+  border-radius: 3px;
+}
+
+.article-tag-list {
+  display: inline-block;
+  margin-left: 15px;
 }

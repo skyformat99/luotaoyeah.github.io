@@ -54,6 +54,20 @@
     <% if (!index){ %>
     <%- partial('post/nav') %>
     <% } %>
+    <div class="panel panel-default">
+        <div class="panel-body"
+             style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
 </article>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>

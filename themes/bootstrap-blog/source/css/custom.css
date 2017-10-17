@@ -357,6 +357,10 @@ code {
   background: #F9F9F9;
 }
 
+#article-nav {
+  margin: 0 0 20px 0;
+}
+
 #article-nav > li > a:hover {
   background: #F9F9F9;
   border: 1px solid #337AB7;

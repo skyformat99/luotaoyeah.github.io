@@ -38,6 +38,14 @@ code {
   font-size: 80%;
 }
 
+a {
+  color: #0366D6;
+}
+
+a:hover {
+  color: #0366D6;
+}
+
 .fa {
   margin-right: 0.25em;
 }
@@ -76,7 +84,7 @@ code {
  */
 
 .blog-main {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .blog-main > article:last-of-type {
@@ -231,7 +239,9 @@ code {
   border-left: none;
   border-right: none;
   border-radius: 0;
-  border-color: #DDDDDD;
+  border-color: #000000;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #24292E;
 }
 
 .navbar-header {
@@ -248,7 +258,8 @@ code {
 
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  background-color: #E7E7E7;
+  background-color: transparent;
+  color: #FFFFFF;
 }
 
 .navbar-brand {
@@ -260,10 +271,6 @@ code {
     padding-top: 16px;
     padding-bottom: 14px;
   }
-}
-
-.list-group-item a:hover {
-  background: #F9F9F9;
 }
 
 .blog-footer {
@@ -309,10 +316,34 @@ code {
   border-radius: 3px;
 }
 
+.panel-footer {
+  background: #FFFFFF;
+  border-top-color: #D1D5DA;
+}
+
+.panel-default {
+  border-color: #D1D5DA;
+}
+
+.panel-default .panel-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.panel-default > .panel-heading {
+  background-color: #F6F8FA;
+  border-color: #D1D5DA;
+}
+
+.list-group-item a:hover {
+  background: #F6F8FA;
+  text-decoration: none;
+}
+
 .list-group-item > .badge {
   position: absolute;
   right: 5px;
-  top: 13px;
+  top: 10px;
 }
 
 .panel-article .panel-title {
@@ -350,10 +381,15 @@ code {
   padding: 10px 30px;
 }
 
+.pagination > li > a {
+  color: #0366D6;
+}
+
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
 .pagination > li > span:hover {
+  color: #0366D6;
   background: #F9F9F9;
 }
 
@@ -361,9 +397,13 @@ code {
   margin: 0 0 20px 0;
 }
 
+#article-nav > li > a {
+  border: 1px solid #0366D6;
+}
+
 #article-nav > li > a:hover {
-  background: #F9F9F9;
-  border: 1px solid #337AB7;
+  background: #F6F8FA;
+  border: 1px solid #0366D6;
 }
 
 #article-nav-older {
@@ -395,3 +435,28 @@ pre {
   display: inline-block;
   margin-left: 15px;
 }
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > span,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > span:hover {
+  color: rgba(36, 41, 46, 0.4);
+  background-color: #EFF3F6;
+  border-color: #DDDDDD;
+}
+
+.navbar-default .navbar-brand {
+  color: rgba(255, 255, 255, .9);
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: rgba(255, 255, 255, .75);
+}
+

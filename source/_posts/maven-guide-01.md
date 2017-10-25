@@ -1,7 +1,9 @@
 ---
 title: Maven入门指南① ：Maven 快速入门及简单使用
 date: 2017-10-04 16:20:37
-tags:
+categories:
+  - maven
+tags: maven
 ---
 
 ## 开发环境

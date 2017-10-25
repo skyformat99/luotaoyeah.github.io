@@ -1,9 +1,9 @@
-<article class="archive-article archive-type-<%= post.layout %>">
-    <header class="archive-article-header">
-        <%- partial('post/title', { class_name: 'archive-article-title' }) %>
-        <%- partial('post/date', {
-            class_name: 'archive-article-date',
-            date_format: 'DD MMMM'
-        }) %>
-    </header>
-</article>
+<li class="list-group-item"
+    style="padding: 0;">
+    <span class="badge"
+          style="background: transparent;color: #999999;font-weight: normal;">
+        <%= date(post.date, 'YYYY/MM/DD') %>
+    </span>
+    <a href="<%- url_for(post.path) %>"
+       style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
+</li>

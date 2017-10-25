@@ -1,17 +1,23 @@
 <% if (pagination == 2){ %>
-<ul class="list-group">
-    <% page.posts.each(function(post){ %>
-    <li class="list-group-item"
-        style="padding: 0;">
-        <span class="badge"
-              style="background: transparent;color: #999999;font-weight: normal;">
-            <%= date(post.date, null) %>
-        </span>
-        <a href="<%- url_for(post.path) %>"
-           style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
-    </li>
-    <% }) %>
-</ul>
+<div class="panel panel-default">
+    <div class="panel-heading"
+         style="padding: 7px 15px 8px;">
+        <div class="panel-title">POSTS</div>
+    </div>
+    <ul class="list-group">
+        <% page.posts.each(function(post){ %>
+        <li class="list-group-item"
+            style="padding: 0;">
+            <span class="badge"
+                  style="background: transparent;color: #999999;font-weight: normal;">
+                <%= date(post.date, 'YYYY/MM/DD') %>
+            </span>
+            <a href="<%- url_for(post.path) %>"
+               style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
 <% } else { %>
 <% var last; %>
 <% page.posts.each(function(post, i){ %>
@@ -21,21 +27,29 @@
 </div></section>
 <% } %>
 <% last = year; %>
-<section class="archives-wrap">
-    <div class="archive-year-wrap">
-        <a href="<%- url_for(config.archive_dir + '/' + year) %>"
-           class="archive-year"><%= year %></a>
+<div class="panel panel-default">
+    <div class="panel-heading"
+         style="padding: 7px 15px 8px;">
+        <div class="panel-title">
+            <% if (is_archive()){ %>
+            ARCHIVES: <%= year %>
+            <% } else if (is_category()){ %>
+            CATEGORIES: <%= page.category %>
+            <% } else if (is_tag()){ %>
+            TAGS: <%= page.tag %>
+            <% } %>
+        </div>
     </div>
-    <div class="archives">
+    <ul class="list-group">
         <% } %>
         <%- partial('archive-post', {
             post: post,
             even: i % 2 == 0
         }) %>
         <% }) %>
-        <% if (page.posts.length){ %>
-    </div>
-</section>
+    </ul>
+    <% if (page.posts.length){ %>
+</div>
 <% } %>
 <% } %>
 <% if (page.total > 1){ %>

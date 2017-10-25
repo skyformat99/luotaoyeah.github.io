@@ -36,6 +36,7 @@ p {
 code {
   background-color: #EEEEEE;
   font-size: 80%;
+  display: inline-block;
 }
 
 a {
@@ -362,10 +363,6 @@ a:hover {
   content: '#';
 }
 
-.article-entry img, .article-entry video {
-  display: inline-block;
-}
-
 .article-date:before {
   content: "";
 }
@@ -460,3 +457,9 @@ pre {
   color: rgba(255, 255, 255, .75);
 }
 
+.article-date:before,
+.article-author:before,
+.article-category-link:before,
+.article-tag-list-link:before {
+  margin: 0;
+}

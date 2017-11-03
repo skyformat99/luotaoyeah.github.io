@@ -243,6 +243,7 @@ a:hover {
   border-color: #000000;
   color: rgba(255, 255, 255, 0.75);
   background-color: #24292E;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-header {
@@ -336,7 +337,9 @@ a:hover {
   border-color: #D1D5DA;
 }
 
-.list-group-item a:hover {
+.list-group-item a:hover,
+.list-group-item a:focus,
+.list-group-item a:visited {
   background: #F6F8FA;
   text-decoration: none;
 }
@@ -384,8 +387,10 @@ a:hover {
 
 .pagination > li > a:focus,
 .pagination > li > a:hover,
+.pagination > li > a:visited,
 .pagination > li > span:focus,
-.pagination > li > span:hover {
+.pagination > li > span:hover,
+.pagination > li > span:visited {
   color: #0366D6;
   background: #F9F9F9;
 }
@@ -398,7 +403,9 @@ a:hover {
   border: 1px solid #0366D6;
 }
 
-#article-nav > li > a:hover {
+#article-nav > li > a:hover,
+#article-nav > li > a:focus,
+#article-nav > li > a:visited {
   background: #F6F8FA;
   border: 1px solid #0366D6;
 }
@@ -436,9 +443,11 @@ pre {
 .pagination > .disabled > a,
 .pagination > .disabled > a:focus,
 .pagination > .disabled > a:hover,
+.pagination > .disabled > a:visited,
 .pagination > .disabled > span,
 .pagination > .disabled > span:focus,
-.pagination > .disabled > span:hover {
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:visited {
   color: rgba(36, 41, 46, 0.4);
   background-color: #EFF3F6;
   border-color: #DDDDDD;
@@ -449,7 +458,8 @@ pre {
 }
 
 .navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:visited {
   color: #FFFFFF;
 }
 

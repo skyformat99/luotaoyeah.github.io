@@ -36,7 +36,10 @@ p {
 code {
   background-color: #EEEEEE;
   font-size: 80%;
-  display: inline-block;
+  display: inline-block !important;
+  border-radius: 3px !important;
+  margin: 0 2px !important;
+  padding: 2px 5px 1px !important;
 }
 
 a {
@@ -243,7 +246,7 @@ a:hover {
   border-color: #000000;
   color: rgba(255, 255, 255, 0.75);
   background-color: #24292E;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-header {
@@ -360,6 +363,7 @@ a:hover {
 
 .article-entry img {
   margin: 5px 0;
+  border-radius: 3px;
 }
 
 .article-tag-list-link:before {
@@ -472,4 +476,12 @@ pre {
 .article-category-link:before,
 .article-tag-list-link:before {
   margin: 0;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.highlight figcaption {
+  font-size: 1em !important;
 }

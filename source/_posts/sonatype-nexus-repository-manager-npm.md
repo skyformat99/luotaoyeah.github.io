@@ -12,6 +12,11 @@ tags:
 ## 0. WHY ?
 网络环境太差的时候，使用 `npm install` 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（[Maven入门指南⑤：使用Nexus搭建Maven私服](http://www.cnblogs.com/luotaoyeah/p/3791966.html)），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。
 
+### 0.1 参考文档
+
+1. [Using Nexus 3 as Your Repository – Part 2: npm Packages](http://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages)
+2. [Node Packaged Modules and npm Registries](https://help.sonatype.com/display/NXRM3/Node+Packaged+Modules+and+npm+Registries)
+
 ## 1. 创建私有仓库
 私有仓库是用来发布公司内部或者个人私有项目的地方。项目发布到私有仓库之后，公司内部就可以像使用普通的 NPM 包一样安装 & 更新该项目，同时又不会将项目代码泄露到公共仓库。
 

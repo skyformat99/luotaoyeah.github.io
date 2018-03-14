@@ -343,8 +343,7 @@ a:hover {
 .list-group-item a:hover,
 .list-group-item a:focus,
 .list-group-item a:visited {
-  background: #F6F8FA;
-  text-decoration: none;
+  background: #FBFBFB;
 }
 
 .list-group-item > .badge {
@@ -484,4 +483,8 @@ pre {
 
 .highlight figcaption {
   font-size: 1em !important;
+}
+
+.blog-sidebar a.sidebar-module-link {
+  display: inline-block;
 }

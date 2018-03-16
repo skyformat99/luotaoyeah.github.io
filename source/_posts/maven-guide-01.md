@@ -6,13 +6,13 @@ categories:
 tags: maven
 ---
 
-## 开发环境
+## 0. 开发环境
 
 * MyEclipse 2014
 * JDK 1.8
 * Maven 3.2.1
 
-## 1. 什么是 Maven？
+## 1. 什么是 Maven ？
 
 [Maven](https://maven.apache.org/) 是一个Java语言编写的开源项目管理工具，是Apache软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。
 

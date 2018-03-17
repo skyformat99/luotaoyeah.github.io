@@ -16,7 +16,7 @@ widgets:
 - tag
 #- tagcloud
 - archive
-- recent_posts
+#- recent_posts
 about_widget_content: >
   luotao
   <br/>

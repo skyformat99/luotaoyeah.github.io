@@ -1,11 +1,15 @@
 <% if (post.prev || post.next){ %>
-<ul id="article-nav"
-    class="nav nav-pills nav-justified">
+<ul
+        id="article-nav"
+        class="nav nav-pills nav-justified"
+>
     <% if (post.next){ %>
     <li role="presentation">
-        <a href="<%- url_for(post.next.path) %>"
-           id="article-nav-older"
-           class="article-nav-link-wrap">
+        <a
+                href="<%- url_for(post.next.path) %>"
+                id="article-nav-older"
+                class="article-nav-link-wrap"
+        >
             <i class="fa fa-caret-left fa-fw"></i>
             <span class="article-nav-link-title"><%= post.next.title || '(no title)' %></span>
         </a>
@@ -13,9 +17,11 @@
     <% } %>
     <% if (post.prev){ %>
     <li role="presentation">
-        <a href="<%- url_for(post.prev.path) %>"
-           id="article-nav-newer"
-           class="article-nav-link-wrap">
+        <a
+                href="<%- url_for(post.prev.path) %>"
+                id="article-nav-newer"
+                class="article-nav-link-wrap"
+        >
             <span class="article-nav-link-title"><%= post.prev.title || '(no title)' %></span>
             <i class="fa fa-caret-right fa-fw"></i>
         </a>

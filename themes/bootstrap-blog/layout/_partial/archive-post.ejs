@@ -1,9 +1,15 @@
-<li class="list-group-item"
-    style="padding: 0;">
-    <span class="badge"
-          style="background: transparent;color: #999999;font-weight: normal;">
+<li
+        class="list-group-item"
+        style="padding: 0;"
+>
+    <span
+            class="badge"
+            style="background: transparent;color: #999999;font-weight: normal;"
+    >
         <%= date(post.date, 'YYYY/MM/DD') %>
     </span>
-    <a href="<%- url_for(post.path) %>"
-       style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
+    <a
+            href="<%- url_for(post.path) %>"
+            style="display: block;width: 100%;padding: 9px 15px;"
+    ><%= post.title || '(no title)' %></a>
 </li>

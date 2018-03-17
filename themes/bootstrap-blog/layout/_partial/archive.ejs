@@ -1,19 +1,27 @@
 <% if (pagination == 2){ %>
 <div class="panel panel-default">
-    <div class="panel-heading"
-         style="padding: 7px 15px 8px;">
+    <div
+            class="panel-heading"
+            style="padding: 7px 15px 8px;"
+    >
         <div class="panel-title">POSTS</div>
     </div>
     <ul class="list-group">
         <% page.posts.each(function(post){ %>
-        <li class="list-group-item"
-            style="padding: 0;">
-            <span class="badge"
-                  style="background: transparent;color: #999999;font-weight: normal;">
+        <li
+                class="list-group-item"
+                style="padding: 0;"
+        >
+            <span
+                    class="badge"
+                    style="background: transparent;color: #999999;font-weight: normal;"
+            >
                 <%= date(post.date, 'YYYY/MM/DD') %>
             </span>
-            <a href="<%- url_for(post.path) %>"
-               style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
+            <a
+                    href="<%- url_for(post.path) %>"
+                    style="display: block;width: 100%;padding: 9px 15px;"
+            ><%= post.title || '(no title)' %></a>
         </li>
         <% }) %>
     </ul>
@@ -28,8 +36,10 @@
 <% } %>
 <% last = year; %>
 <div class="panel panel-default">
-    <div class="panel-heading"
-         style="padding: 7px 15px 8px;">
+    <div
+            class="panel-heading"
+            style="padding: 7px 15px 8px;"
+    >
         <div class="panel-title">
             <% if (is_archive()){ %>
             ARCHIVES: <%= year %>
@@ -55,8 +65,8 @@
 <% if (page.total > 1){ %>
 <div id="page-nav">
     <%- bs_paginator({
-        prev_text: 'Prev',
-        next_text: 'Next'
+        prev_text: '<i class="fa fa-caret-left"></i> PREV',
+        next_text: 'NEXT <i class="fa fa-caret-right"></i>'
     }) %>
 </div>
 <% } %>

@@ -1,25 +1,33 @@
-<article id="<%= post.layout %>-<%= post.slug %>"
-         class="article article-type-<%= post.layout %>"
-         itemscope
-         itemprop="blogPost">
+<article
+        id="<%= post.layout %>-<%= post.slug %>"
+        class="article article-type-<%= post.layout %>"
+        itemscope
+        itemprop="blogPost"
+>
 
     <div class="panel panel-default panel-article">
-        <div class="panel-heading"
-             style="padding: 7px 15px 8px;">
+        <div
+                class="panel-heading"
+                style="padding: 7px 15px 8px;"
+        >
             <div class="panel-title">
                 <%= post.title || '(no title)' %>
             </div>
         </div>
         <div class="panel-body">
             <div class="article-inner">
-                <div class="article-entry"
-                     itemprop="articleBody">
+                <div
+                        class="article-entry"
+                        itemprop="articleBody"
+                >
                     <% if (post.excerpt && index){ %>
                     <%- post.excerpt %>
                     <% if (theme.excerpt_link){ %>
                     <p class="article-more-link">
-                        <a class="btn btn-primary"
-                           href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+                        <a
+                                class="btn btn-primary"
+                                href="<%- url_for(post.path) %>#more"
+                        ><%= theme.excerpt_link %></a>
                     </p>
                     <% } %>
                     <% } else { %>
@@ -34,19 +42,26 @@
         </div>
         <div class="panel-footer">
             <footer class="article-footer">
-                <a data-url="<%- post.permalink %>"
-                   data-id="<%= post._id %>"
-                   class="article-share-link">
+                <a
+                        data-url="<%- post.permalink %>"
+                        data-id="<%= post._id %>"
+                        class="article-share-link"
+                >
                     SHARE
                 </a>
                 <% if (post.comments && config.disqus_shortname){ %>
-                <a href="<%- post.permalink %>#disqus_thread"
-                   class="article-comment-link">
-                    <i class="fa fa-comment"></i> Comments
+                <a
+                        href="<%- post.permalink %>#disqus_thread"
+                        class="article-comment-link"
+                >
+                    <i class="fa fa-comment"></i>
+                    Comments
                 </a>
                 <% } %>
-                <span class="article-tag-list-link"
-                      style="margin-right: 15px; color: #999999;"><%= date(post.date, 'YYYY/MM/DD') %></span>
+                <span
+                        class="article-tag-list-link"
+                        style="margin-right: 15px; color: #999999;"
+                ><%= date(post.date, 'YYYY/MM/DD') %></span>
                 <%- partial('post/category') %>
                 <%- partial('post/tag') %>
             </footer>
@@ -56,8 +71,10 @@
     <%- partial('post/nav') %>
     <% } %>
     <div class="panel panel-default">
-        <div class="panel-body"
-             style="padding: 15px 30px;">
+        <div
+                class="panel-body"
+                style="padding: 15px 30px;"
+        >
             <div id="disqus_thread"></div>
             <script type="text/javascript">
               (function() {
@@ -74,8 +91,11 @@
 <% if (!index && post.comments && config.disqus_shortname){ %>
 <section id="comments">
     <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
-                Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the
+            <a href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.
+            </a>
+        </noscript>
     </div>
 </section>
 <% } %>

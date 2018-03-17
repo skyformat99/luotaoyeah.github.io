@@ -5,10 +5,14 @@
     </div>
     <ul class="list-group">
         <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
-        <li class="list-group-item"
-            style="padding: 0;">
-            <a href="<%- url_for(post.path) %>"
-               style="display: block;width: 100%;padding: 9px 15px;"><%= post.title || '(no title)' %></a>
+        <li
+                class="list-group-item"
+                style="padding: 0;"
+        >
+            <a
+                    href="<%- url_for(post.path) %>"
+                    style="display: block;width: 100%;padding: 9px 15px;"
+            ><%= post.title || '(no title)' %></a>
         </li>
         <% }) %>
     </ul>

@@ -2,7 +2,7 @@
 title: Maven 入门指南 ① ：Maven 快速入门及简单使用
 date: 2014-06-02 20:07:37
 categories:
-  - maven
+  - Maven
 tags: maven
 ---
 

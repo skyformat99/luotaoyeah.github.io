@@ -2,7 +2,7 @@
 title: Maven 入门指南 ② ：Maven 常用命令 & 手动创建第一个 Maven 项目
 date: 2014-06-06 22:30:34
 categories:
-  - maven
+  - Maven
 tags: maven
 ---
 

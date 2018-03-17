@@ -2,7 +2,7 @@
 title: 使用 Nexus Repository Manager 搭建 NPM 私服
 date: 2017-12-05 17:03:35
 categories:
-  - nodejs
+  - Node.js
 tags:
   - nodejs
   - npm

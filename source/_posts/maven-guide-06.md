@@ -2,7 +2,7 @@
 title: Maven 入门指南 ⑥ ：将项目发布到私服
 date: 2014-06-30 23:20:34
 categories:
-  - maven
+  - Maven
 tags: maven
 ---
 

@@ -2,7 +2,7 @@
 title: Maven 入门指南 ③ ：坐标和依赖
 date: 2014-06-13 02:00:00
 categories:
-  - maven
+  - Maven
 tags: maven
 ---
 

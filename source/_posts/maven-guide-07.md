@@ -2,7 +2,7 @@
 title: Maven 入门指南 ⑦ ：Maven 的生命周期和插件
 date: 2014-07-01 21:04:34
 categories:
-  - maven
+  - Maven
 tags: maven
 ---
 

@@ -70,7 +70,7 @@ registry=http://192.168.199.10:8081/repository/npm-group/
 ## 5. 发布项目到私有仓库
 发布项目到私有仓库，需要首先配置权限认证。
 
-### 5.1 生成 `auth hash`
+### 5.1. 生成 `auth hash`
 使用命令 `echo -n 'username:password' | openssl base64` 来生成 `auth hash`：
 ![](/images/sonatype-nexus-repository-manager-npm/anth-hash.png)
 

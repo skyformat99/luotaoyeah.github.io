@@ -42,7 +42,7 @@ npm install flow-bin -D
 
 项目根目录下已经存在`.babelrc`和`.eslintrc.js`配置文件，更新配置如下：
 
-```javascript .babelrc
+```json .babelrc
 {
   "plugins": [
     "syntax-flow",
@@ -51,7 +51,7 @@ npm install flow-bin -D
 }
 ```
 
-```javascript .eslintrc.js
+```json .eslintrc.js
 {
   "plugins": [
     "vue",

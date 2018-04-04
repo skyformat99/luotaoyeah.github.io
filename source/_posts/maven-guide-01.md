@@ -2,11 +2,9 @@
 title: Maven 入门指南 ① ：Maven 快速入门及简单使用
 date: 2014-06-02 20:07:37
 categories:
-  - Maven
+  - MAVEN
 tags: maven
 ---
-
-> [Maven入门指南① ：Maven 快速入门及简单使用 - 罗韬 - 博客园](http://www.cnblogs.com/luotaoyeah/p/3764533.html)
 
 ## 0. 开发环境
 

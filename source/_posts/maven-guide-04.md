@@ -2,7 +2,7 @@
 title: Maven 入门指南 ④ ：仓库
 date: 2014-06-16 23:01:34
 categories:
-  - Maven
+  - MAVEN
 tags: maven
 ---
 

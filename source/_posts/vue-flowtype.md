@@ -2,7 +2,7 @@
 title: Vue.js 配置 Flowtype 静态类型检查
 date: 2017-08-02 20:07:37
 categories:
-  - Vue.js
+  - VUE.JS
 tags:
   - vue
   - flowtype

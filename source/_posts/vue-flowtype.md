@@ -1,5 +1,5 @@
 ---
-title: Vue.js 2 项目配置 Flowtype 静态类型检查
+title: Vue.js 配置 Flowtype 静态类型检查
 date: 2017-08-02 20:07:37
 categories:
   - Vue.js
@@ -80,7 +80,7 @@ module.file_ext=.js
 module.file_ext=.scss
 ```
 
-### 2.3 设置IDE
+### 2.3 设置 IDE
 
 Intellij IDEA（或 WebStorm） 对 Flowtype 提供了很好的支持，结合官方的 Vue.js 插件，编写 Vue.js 单文件组件变得特别方便。
 
@@ -111,9 +111,7 @@ Intellij IDEA（或 WebStorm） 对 Flowtype 提供了很好的支持，结合�
 </script>
 
 <style lang="scss"></style>
-
 ```
-
 
 此时 IDE 检测到文件变化时，会自动运行 ESLint；由于我们配置了 ESLint 和 Flowtype 集成的相关插件，Flowtype errors 会以 ESLint errors 的形式实时地显示到控制台，而不用手动运行`flow check`命令：
 

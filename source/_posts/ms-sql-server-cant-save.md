@@ -4,6 +4,7 @@ date: 2012-08-10 16:56:02
 categories:
   - SQL SERVER
 tags:
+  - sql server
   - sql
 ---
 

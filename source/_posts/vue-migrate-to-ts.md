@@ -1,6 +1,6 @@
 ---
 title: Vue.js 逐步迁移到 TypeScript
-date: 2017-11-12 21:08:02
+date: 2018-01-02 21:08:02
 categories:
   - VUE.JS
 tags:

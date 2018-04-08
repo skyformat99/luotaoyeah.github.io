@@ -488,3 +488,15 @@ pre {
 .blog-sidebar a.sidebar-module-link {
   display: inline-block;
 }
+
+.gist .table > tbody > tr > td {
+  border: none;
+}
+
+.gist .gist-data {
+  border-bottom: none !important;
+}
+
+.gist .gist-meta {
+  display: none;
+}

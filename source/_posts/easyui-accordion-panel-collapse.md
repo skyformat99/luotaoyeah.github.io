@@ -9,12 +9,7 @@ tags:
 
 EasyUI Accordion 下面的 Panel 有一个属性 `selected`，默认值为 `false` ；若设置为 `true`，则面板默认展开：
 
-```html
-<div title="文章管理" data-options="iconCls:'icon-news',selected:true">
-    <span>·<a href="javascript:void(0)" url="/admin/article/articlemanage" class="menu-link">文章管理</a></span>
-    <span>·<a href="javascript:void(0)" url="/admin/article/articlerecycle" class="menu-link">文章回收站</a></span>
-</div>
-```
+<script src="https://gist.github.com/luotaoyeah/a10bbbb23846fff982488b6019accab8.js"></script>
 
 ![](/images/easyui-accordion-panel-collapse/easyui-accordion-panel-collapse-001.png)
 

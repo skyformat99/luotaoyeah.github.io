@@ -21,64 +21,22 @@ Vue.js 从 2.0 开始采用了 Flowtype，作者尤雨溪在知乎上对为什�
 ### 2.1 安装依赖包
 
 * 安装 Babel 相关依赖包：
-
-```bash
-npm install babel-plugin-syntax-flow babel-plugin-transform-class-properties babel-plugin-transform-flow-strip-types -D
-```
+<script src="https://gist.github.com/luotaoyeah/99af3cc9da24d2c4e6e11c0605b0fda7.js"></script>
 
 * 安装 ESLint 相关依赖包：
-
-```bash
-npm install eslint-plugin-html eslint-plugin-flowtype-errors eslint-plugin-vue -D
-```
+<script src="https://gist.github.com/luotaoyeah/a33e21bfef8554eeb652bba197b057f5.js"></script>
 
 * 安装 Flowtype 相关依赖包：
-
-```bash
-npm install flow-bin -D
-```
+<script src="https://gist.github.com/luotaoyeah/e205b13fa4841e3e5f5fbd758283d447.js"></script>
 
 ### 2.2 配置插件
 
 项目根目录下已经存在`.babelrc`和`.eslintrc.js`配置文件，更新配置如下：
-
-```json .babelrc
-{
-  "plugins": [
-    "syntax-flow",
-    "transform-flow-strip-types"
-  ]
-}
-```
-
-```json .eslintrc.js
-{
-  "plugins": [
-    "vue",
-    "flowtype-errors"
-  ],
-  "rules": {
-    "flowtype-errors/show-errors": 2
-  }
-}
-```
+<script src="https://gist.github.com/luotaoyeah/5350794e0caff5448acaa5e336e35297.js"></script>
+<script src="https://gist.github.com/luotaoyeah/58f95494ab48f4966024fdba742f297f.js"></script>
 
 `.flowconfig`需要手动添加，或者在项目根目录执行`flow init`来生成。
-
-```config .flowconfig
-[ignore]
-.*/test/.*
-.*/build/.*
-.*/config/.*
-[include]
-
-[libs]
-
-[options]
-module.file_ext=.vue
-module.file_ext=.js
-module.file_ext=.scss
-```
+<script src="https://gist.github.com/luotaoyeah/bfaa80898acc7cd3acd0a7ac2d8ca166.js"></script>
 
 ### 2.3 设置 IDE
 
@@ -101,17 +59,7 @@ Intellij IDEA（或 WebStorm） 对 Flowtype 提供了很好的支持，结合�
 ### 2.4 使用 Flowtype
 
 在 .vue 文件 script 块中，添加注释`/* @flow */`或者`// @flow`来启用 Flowtype：
-
-```html index.vue
-<template></template>
-
-<script type="text/babel">
-  /* @flow */
-  const str: string = 1;
-</script>
-
-<style lang="scss"></style>
-```
+<script src="https://gist.github.com/luotaoyeah/7b1ed2866fc747e05d22c6bc7a3a0648.js"></script>
 
 此时 IDE 检测到文件变化时，会自动运行 ESLint；由于我们配置了 ESLint 和 Flowtype 集成的相关插件，Flowtype errors 会以 ESLint errors 的形式实时地显示到控制台，而不用手动运行`flow check`命令：
 

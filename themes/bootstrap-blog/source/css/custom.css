@@ -500,3 +500,8 @@ pre {
 .gist .gist-meta {
   display: none;
 }
+
+.gist .gist-file {
+  border-radius: 2px !important;
+  border-bottom-color: #DDDDDD !important;
+}

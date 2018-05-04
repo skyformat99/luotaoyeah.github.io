@@ -89,7 +89,7 @@ pre code {
 
 .gist .gist-file {
   border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: Monaco, Consolas, Menlo, Consolas, monospace;
   margin: 0;
 }
 

@@ -20,7 +20,7 @@ date: 2018-02-01 21:08:02
 
 <script src="https://gist.github.com/luotaoyeah/855a4fb8f59e550eb67edc2d7ee34874.js"></script>
 
-## 2. 安装 MySQL
+## 2. 安装 MySQL.article-entry img
 
 ### 2.1. 查看 MySQL 版本
 

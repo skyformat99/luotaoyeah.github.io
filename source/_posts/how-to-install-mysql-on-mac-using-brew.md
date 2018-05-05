@@ -15,12 +15,11 @@ date: 2018-02-01 21:08:02
 * Homebrew v1.6.0
 * MySQL v5.7.21
 
-
 ## 1. 安装 Homebrew
 
 <script src="https://gist.github.com/luotaoyeah/855a4fb8f59e550eb67edc2d7ee34874.js"></script>
 
-## 2. 安装 MySQL.article-entry img
+## 2. 安装 MySQL
 
 ### 2.1. 查看 MySQL 版本
 
@@ -35,6 +34,7 @@ date: 2018-02-01 21:08:02
 ![](/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-02.png)
 
 ## 3. 后续配置
+
 ### 3.1. 安装 Homebrew 服务
 
 <script src="https://gist.github.com/luotaoyeah/aa4b4f9a58dbdde8a8e70af46e9e2139.js"></script>

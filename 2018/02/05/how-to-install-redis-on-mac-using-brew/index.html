@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            如何在 macOS 上使用 Homebrew 安装 Redis ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="0. 环境 macOS v10.13.3 Homebrew v1.6.0 Redis v4.0.9  1. 安装 Redis1.1. 查看 Redis 版本   1.2. 安装 Redis   1.3. 启动 Redis   1.4. 测试 Redis 是否运行">
+<meta name="keywords" content="mac,homebrew,redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在 macOS 上使用 Homebrew 安装 Redis">
+<meta property="og:url" content="http://luotao.me/2018/02/05/how-to-install-redis-on-mac-using-brew/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="0. 环境 macOS v10.13.3 Homebrew v1.6.0 Redis v4.0.9  1. 安装 Redis1.1. 查看 Redis 版本   1.2. 安装 Redis   1.3. 启动 Redis   1.4. 测试 Redis 是否运行">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-01.png">
+<meta property="og:image" content="http://luotao.me/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-02.png">
+<meta property="og:image" content="http://luotao.me/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-03.png">
+<meta property="og:image" content="http://luotao.me/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-04.png">
+<meta property="og:updated_time" content="2019-02-22T08:10:15.335Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在 macOS 上使用 Homebrew 安装 Redis">
+<meta name="twitter:description" content="0. 环境 macOS v10.13.3 Homebrew v1.6.0 Redis v4.0.9  1. 安装 Redis1.1. 查看 Redis 版本   1.2. 安装 Redis   1.3. 启动 Redis   1.4. 测试 Redis 是否运行">
+<meta name="twitter:image" content="http://luotao.me/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-01.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-how-to-install-redis-on-mac-using-brew" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                如何在 macOS 上使用 Homebrew 安装 Redis
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="0-环境"><a href="#0-环境" class="headerlink" title="0. 环境"></a>0. 环境</h2><ul>
+<li>macOS v10.13.3</li>
+<li>Homebrew v1.6.0</li>
+<li>Redis v4.0.9</li>
+</ul>
+<h2 id="1-安装-Redis"><a href="#1-安装-Redis" class="headerlink" title="1. 安装 Redis"></a>1. 安装 Redis</h2><h3 id="1-1-查看-Redis-版本"><a href="#1-1-查看-Redis-版本" class="headerlink" title="1.1. 查看 Redis 版本"></a>1.1. 查看 Redis 版本</h3><script src="https://gist.github.com/luotaoyeah/c7498425851e794556fc0d0f0b81c922.js"></script>
+
+<p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-01.png" alt></p>
+<h3 id="1-2-安装-Redis"><a href="#1-2-安装-Redis" class="headerlink" title="1.2. 安装 Redis"></a>1.2. 安装 Redis</h3><script src="https://gist.github.com/luotaoyeah/43cc4094c135f820391716dc787e75e9.js"></script>
+
+<p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-02.png" alt></p>
+<h3 id="1-3-启动-Redis"><a href="#1-3-启动-Redis" class="headerlink" title="1.3. 启动 Redis"></a>1.3. 启动 Redis</h3><script src="https://gist.github.com/luotaoyeah/7428164276df2a925d78be1d6b3d486d.js"></script>
+
+<p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-03.png" alt></p>
+<h3 id="1-4-测试-Redis-是否运行"><a href="#1-4-测试-Redis-是否运行" class="headerlink" title="1.4. 测试 Redis 是否运行"></a>1.4. 测试 Redis 是否运行</h3><script src="https://gist.github.com/luotaoyeah/a78710ab6c17868879272a374a6a7c68.js"></script>
+
+<p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-04.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2018/02/05/how-to-install-redis-on-mac-using-brew/" data-id="cjsfrzl4f0006skucq8udwcm9" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2018/02/05</span>
+                
+<a class="article-category-link" href="/categories/REDIS/">REDIS</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/homebrew/">homebrew</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2018/02/01/how-to-install-mysql-on-mac-using-brew/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">如何在 macOS 上使用 Homebrew 安装 MySQL</span>
+        </a>
+    </li>
+    
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

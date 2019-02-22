@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            Vue.js 逐步迁移到 TypeScript ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="0. WHY ?JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷与不足也越来越明显，所谓”动态类型一时爽，代码重构火葬场”；而 TypeScript 作为 JavaScript 的超集，其引入的诸多特性，使得构建大型复杂应用成为可能。 从一开始就使用 TypeScript 来构建应用自然是最好的选择，如果应用一开始是使用 JavaScript">
+<meta name="keywords" content="vue,typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js 逐步迁移到 TypeScript">
+<meta property="og:url" content="http://luotao.me/2018/01/02/vue-migrate-to-ts/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="0. WHY ?JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷与不足也越来越明显，所谓”动态类型一时爽，代码重构火葬场”；而 TypeScript 作为 JavaScript 的超集，其引入的诸多特性，使得构建大型复杂应用成为可能。 从一开始就使用 TypeScript 来构建应用自然是最好的选择，如果应用一开始是使用 JavaScript">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/vue-migrate-to-ts/vue-migrate-to-ts-01.png">
+<meta property="og:image" content="http://luotao.me/images/vue-migrate-to-ts/vue-migrate-to-ts-02.png">
+<meta property="og:updated_time" content="2019-02-22T12:54:36.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js 逐步迁移到 TypeScript">
+<meta name="twitter:description" content="0. WHY ?JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷与不足也越来越明显，所谓”动态类型一时爽，代码重构火葬场”；而 TypeScript 作为 JavaScript 的超集，其引入的诸多特性，使得构建大型复杂应用成为可能。 从一开始就使用 TypeScript 来构建应用自然是最好的选择，如果应用一开始是使用 JavaScript">
+<meta name="twitter:image" content="http://luotao.me/images/vue-migrate-to-ts/vue-migrate-to-ts-01.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-vue-migrate-to-ts" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                Vue.js 逐步迁移到 TypeScript
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="0-WHY"><a href="#0-WHY" class="headerlink" title="0. WHY ?"></a>0. WHY ?</h2><p>JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷与不足也越来越明显，所谓”动态类型一时爽，代码重构火葬场”；而 TypeScript 作为 JavaScript 的超集，其引入的诸多特性，使得构建大型复杂应用成为可能。</p>
+<p>从一开始就使用 TypeScript 来构建应用自然是最好的选择，如果应用一开始是使用 JavaScript 来构建，当增长到一定规模时，想要迁移到 TypeScript 应该如何实现呢 ?</p>
+<h2 id="1-前置条件"><a href="#1-前置条件" class="headerlink" title="1. 前置条件"></a>1. 前置条件</h2><p>本文假设原有项目是基于 vue-cli 的 webpack 模板进行搭建的。</p>
+<h2 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h2><p>在原有的基于 webpack 打包构建的流程之上，引入单独的处理器对 TypeScript 文件进行处理，实现 js 文件与 ts 文件共存且分别进行处理，从而实现 JavaScript 到 TypeScript 的逐步迁移。经过改造之后的项目将具备以下特性：</p>
+<ul>
+<li>js 文件和 ts 文件可以共存，互不影响；</li>
+<li>js 模块和 ts 模块可以相互引用；</li>
+<li>支持单文件组件（SFC）迁移到 ts；</li>
+</ul>
+<h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h2><h4 id="3-1-安装相关依赖"><a href="#3-1-安装相关依赖" class="headerlink" title="3.1. 安装相关依赖"></a>3.1. 安装相关依赖</h4><script src="https://gist.github.com/luotaoyeah/45c663f135b757c18a2beeb4430a0669.js"></script>
+
+<h4 id="3-2-修改-webpack-配置"><a href="#3-2-修改-webpack-配置" class="headerlink" title="3.2. 修改 webpack 配置"></a>3.2. 修改 webpack 配置</h4><ul>
+<li><code>resolve.extensions</code> 添加 <code>.ts</code>；</li>
+<li>针对 ts 文件添加一个 <code>rule</code>；</li>
+</ul>
+<script src="https://gist.github.com/luotaoyeah/655ce5ad5ad942b14eec106e7259f74c.js"></script>
+
+<h4 id="3-3-添加-tsconfig-json-配置文件"><a href="#3-3-添加-tsconfig-json-配置文件" class="headerlink" title="3.3. 添加 tsconfig.json 配置文件"></a>3.3. 添加 tsconfig.json 配置文件</h4><p>在根目录添加配置文件 <code>tsconfig.json</code>：</p>
+<script src="https://gist.github.com/luotaoyeah/1cf4b72c4da9cd950ef999c21d6c3ef9.js"></script>
+
+<p>其中配置项 <code>include</code> 使用了通配符：<code>[&quot;./src/**/*&quot;]</code>，这样就实现了只有 ts 相关的文件才会被 TypeScript 处理；</p>
+<blockquote>
+<p>If a segment of a glob pattern includes only <code>*</code> or <code>.*</code>, then only files with supported extensions are included (e.g. .ts, .tsx, and .d.ts by default with .js and .jsx if allowJs is set to true).</p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/tsconfig-json.html</a></p>
+</blockquote>
+<h4 id="3-4-添加类型定义文件"><a href="#3-4-添加类型定义文件" class="headerlink" title="3.4. 添加类型定义文件"></a>3.4. 添加类型定义文件</h4><ul>
+<li>在根目录新建文件夹 <code>types</code>，用来存放类型定义文件；</li>
+<li>添加类型定义文件 <code>shim-vue.d.ts</code>：<script src="https://gist.github.com/luotaoyeah/c38cc6de04d5b0392828ad28bb7c6269.js"></script>
+
+</li>
+</ul>
+<h2 id="4-迁移"><a href="#4-迁移" class="headerlink" title="4. 迁移"></a>4. 迁移</h2><h4 id="4-1-js-文件"><a href="#4-1-js-文件" class="headerlink" title="4.1. js 文件"></a>4.1. js 文件</h4><p>对于 js 文件，</p>
+<ul>
+<li>将文件后缀修改为 <code>.ts</code>；</li>
+<li>将 js 代码重构为 ts 代码；</li>
+</ul>
+<h4 id="4-2-vue-文件"><a href="#4-2-vue-文件" class="headerlink" title="4.2. vue 文件"></a>4.2. vue 文件</h4><p>对于 vue 文件，</p>
+<ul>
+<li>将 script 标签中的 js 代码分离到单独的 <code>.ts</code> 文件；</li>
+<li>将 js 代码重构为 ts 代码；</li>
+<li>在 vue 文件引入该 <code>.ts</code> 文件；</li>
+</ul>
+<p><img src="/images/vue-migrate-to-ts/vue-migrate-to-ts-01.png" alt><br><img src="/images/vue-migrate-to-ts/vue-migrate-to-ts-02.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2018/01/02/vue-migrate-to-ts/" data-id="cjsfrzl590010skuc9bcp514v" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2018/01/02</span>
+                
+<a class="article-category-link" href="/categories/VUE-JS/">VUE.JS</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2017/12/05/sonatype-nexus-repository-manager-npm/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">使用 Nexus Repository Manager 搭建 NPM 私服</span>
+        </a>
+    </li>
+    
+    
+    <li role="presentation">
+        <a href="/2018/02/01/how-to-install-mysql-on-mac-using-brew/" id="article-nav-newer" class="article-nav-link-wrap">
+            <span class="article-nav-link-title">如何在 macOS 上使用 Homebrew 安装 MySQL</span>
+            <i class="fa fa-caret-right fa-fw"></i>
+        </a>
+    </li>
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            ASP.NET MVC 4 使用 Uploadify 文件上传插件 ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="1. 下载官网下载免费的 Flash 版本的开发包：http://www.uploadify.com/download/；  2. 解压解压后，需要用到下面几个文件：  3. 前端配置3.1. 页面添加 CSS 和 JS 引用  3.2. 添加上传按钮标签  3.3. 初始化插件  4. 后端代码  5. 参数说明 uploader: &amp;#39;/article/upload&amp;#39; 请求地址，">
+<meta name="keywords" content="asp.net,uploadify">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASP.NET MVC 4 使用 Uploadify 文件上传插件">
+<meta property="og:url" content="http://luotao.me/2013/09/14/asp-net-mvc-uploadify/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="1. 下载官网下载免费的 Flash 版本的开发包：http://www.uploadify.com/download/；  2. 解压解压后，需要用到下面几个文件：  3. 前端配置3.1. 页面添加 CSS 和 JS 引用  3.2. 添加上传按钮标签  3.3. 初始化插件  4. 后端代码  5. 参数说明 uploader: &amp;#39;/article/upload&amp;#39; 请求地址，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-01.png">
+<meta property="og:image" content="http://luotao.me/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-02.png">
+<meta property="og:image" content="http://luotao.me/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-03.png">
+<meta property="og:image" content="http://luotao.me/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-04.png">
+<meta property="og:updated_time" content="2019-02-22T12:54:36.605Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ASP.NET MVC 4 使用 Uploadify 文件上传插件">
+<meta name="twitter:description" content="1. 下载官网下载免费的 Flash 版本的开发包：http://www.uploadify.com/download/；  2. 解压解压后，需要用到下面几个文件：  3. 前端配置3.1. 页面添加 CSS 和 JS 引用  3.2. 添加上传按钮标签  3.3. 初始化插件  4. 后端代码  5. 参数说明 uploader: &amp;#39;/article/upload&amp;#39; 请求地址，">
+<meta name="twitter:image" content="http://luotao.me/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-01.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-asp-net-mvc-uploadify" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                ASP.NET MVC 4 使用 Uploadify 文件上传插件
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p>官网下载免费的 Flash 版本的开发包：<a href="http://www.uploadify.com/download/" target="_blank" rel="noopener">http://www.uploadify.com/download/</a>；</p>
+<p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-01.png" alt></p>
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2. 解压"></a>2. 解压</h2><p>解压后，需要用到下面几个文件：</p>
+<p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-02.png" alt></p>
+<h2 id="3-前端配置"><a href="#3-前端配置" class="headerlink" title="3. 前端配置"></a>3. 前端配置</h2><h4 id="3-1-页面添加-CSS-和-JS-引用"><a href="#3-1-页面添加-CSS-和-JS-引用" class="headerlink" title="3.1. 页面添加 CSS 和 JS 引用"></a>3.1. 页面添加 CSS 和 JS 引用</h4><script src="https://gist.github.com/luotaoyeah/6cf3d7b79f2a683c4adbd7263998cc05.js"></script>
+
+<h4 id="3-2-添加上传按钮标签"><a href="#3-2-添加上传按钮标签" class="headerlink" title="3.2. 添加上传按钮标签"></a>3.2. 添加上传按钮标签</h4><script src="https://gist.github.com/luotaoyeah/d4250e7c2af06c65c096ca11f3a6a5e1.js"></script>
+
+<h4 id="3-3-初始化插件"><a href="#3-3-初始化插件" class="headerlink" title="3.3. 初始化插件"></a>3.3. 初始化插件</h4><script src="https://gist.github.com/luotaoyeah/8aa5ceaeeca73d58c52151385a8842b2.js"></script>
+
+<h2 id="4-后端代码"><a href="#4-后端代码" class="headerlink" title="4. 后端代码"></a>4. 后端代码</h2><script src="https://gist.github.com/luotaoyeah/e0098b3e0e93ac3aca5ba7a1dd6791c0.js"></script>
+
+<h2 id="5-参数说明"><a href="#5-参数说明" class="headerlink" title="5. 参数说明"></a>5. 参数说明</h2><ul>
+<li><code>uploader: &#39;/article/upload&#39;</code> 请求地址，对应后端进行处理的 Action；</li>
+<li><p><code>formData:{ &quot;imgType&quot;: &quot;normal&quot; }</code> 动态设置表单数据，一般在 <code>onUploadStart</code> 事件中进行处理：</p>
+<script src="https://gist.github.com/luotaoyeah/933a1f8c398bf668811b336aa14d489f.js"></script>
+
+<pre><code>如果参数名与初始化的 formData 中的参数名一样，参数值将被覆盖，否则添加；在开始上传之前执行动态设置都是可以的，例如在两个 checkbox（使用 bootstrap-switch 插件）的状态切换时进行设置：
+</code></pre><script src="https://gist.github.com/luotaoyeah/6d815bb02ea2202442719dcae7cddd11.js"></script>
+</li>
+</ul>
+<ul>
+<li><p><code>onUploadSuccess</code> 事件处理函数的 3 个参数：</p>
+<ul>
+<li><code>file</code> 包含原始文件的信息；</li>
+<li><code>response</code> 后台返回（true 或 false）；</li>
+<li><code>data</code> 后台返回数据，试例中为 JSON 对象；</li>
+</ul>
+</li>
+<li><p>其他详细参数，请参考官方文档：<a href="http://www.uploadify.com/documentation/" target="_blank" rel="noopener">http://www.uploadify.com/documentation/</a></p>
+</li>
+</ul>
+<h2 id="6-效果预览"><a href="#6-效果预览" class="headerlink" title="6. 效果预览"></a>6. 效果预览</h2><p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-03.png" alt><br><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-04.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2013/09/14/asp-net-mvc-uploadify/" data-id="cjsfrzl3p0002skucfaq42yaz" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2013/09/14</span>
+                
+<a class="article-category-link" href="/categories/ASP-NET/">ASP.NET</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/asp-net/">asp.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uploadify/">uploadify</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2013/09/10/easyui-accordion-panel-collapse/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">EasyUI Accordion 的 Panel 初始化时全部折叠</span>
+        </a>
+    </li>
+    
+    
+    <li role="presentation">
+        <a href="/2014/04/19/eclipse-jdk-api/" id="article-nav-newer" class="article-nav-link-wrap">
+            <span class="article-nav-link-title">Eclipse / MyEclipse 添加 JDK API 帮助文档</span>
+            <i class="fa fa-caret-right fa-fw"></i>
+        </a>
+    </li>
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

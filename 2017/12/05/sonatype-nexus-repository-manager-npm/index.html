@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            使用 Nexus Repository Manager 搭建 NPM 私服 ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="0. WHY ?网络环境太差的时候，使用 npm install 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。 0.1 参考文档 Using Nex">
+<meta name="keywords" content="nodejs,npm,nexus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Nexus Repository Manager 搭建 NPM 私服">
+<meta property="og:url" content="http://luotao.me/2017/12/05/sonatype-nexus-repository-manager-npm/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="0. WHY ?网络环境太差的时候，使用 npm install 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。 0.1 参考文档 Using Nex">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/create-repository.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/select-npm-hosted.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/config-npm-hosted.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/create-repository.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/select-npm-proxy.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/config-npm-proxy.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/create-repository.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/select-npm-group.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/config-npm-group.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/npm-group-info.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/npm-install-registry.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/anth-hash.png">
+<meta property="og:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/publish-success.png">
+<meta property="og:updated_time" content="2019-02-22T12:54:36.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Nexus Repository Manager 搭建 NPM 私服">
+<meta name="twitter:description" content="0. WHY ?网络环境太差的时候，使用 npm install 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。 0.1 参考文档 Using Nex">
+<meta name="twitter:image" content="http://luotao.me/images/sonatype-nexus-repository-manager-npm/create-repository.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-sonatype-nexus-repository-manager-npm" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                使用 Nexus Repository Manager 搭建 NPM 私服
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="0-WHY"><a href="#0-WHY" class="headerlink" title="0. WHY ?"></a>0. WHY ?</h2><p>网络环境太差的时候，使用 <code>npm install</code> 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（<a href="http://www.cnblogs.com/luotaoyeah/p/3791966.html" target="_blank" rel="noopener">Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服</a>），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。</p>
+<h3 id="0-1-参考文档"><a href="#0-1-参考文档" class="headerlink" title="0.1 参考文档"></a>0.1 参考文档</h3><ol>
+<li><a href="http://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages" target="_blank" rel="noopener">Using Nexus 3 as Your Repository – Part 2: npm Packages</a></li>
+<li><a href="https://help.sonatype.com/display/NXRM3/Node+Packaged+Modules+and+npm+Registries" target="_blank" rel="noopener">Node Packaged Modules and npm Registries</a></li>
+</ol>
+<h2 id="1-创建私有仓库"><a href="#1-创建私有仓库" class="headerlink" title="1. 创建私有仓库"></a>1. 创建私有仓库</h2><p>私有仓库是用来发布公司内部或者个人私有项目的地方。项目发布到私有仓库之后，公司内部就可以像使用普通的 NPM 包一样安装 &amp; 更新该项目，同时又不会将项目代码泄露到公共仓库。</p>
+<ol>
+<li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li>
+<li>选择 <code>npm (hosted)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-hosted.png" alt></li>
+<li>填写名称，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-hosted.png" alt></li>
+</ol>
+<h2 id="2-创建代理仓库"><a href="#2-创建代理仓库" class="headerlink" title="2. 创建代理仓库"></a>2. 创建代理仓库</h2><p>代理仓库是用来缓存远程仓库依赖的地方。通过代理仓库安装项目依赖时，Nexus 首先会查找代理仓库，如果找到该依赖，则直接从代理仓库下载该依赖到本地；如果没找到该依赖，则首先从远程仓库（<a href="http://registry.npmjs.org/" target="_blank" rel="noopener">http://registry.npmjs.org/</a>）下载该依赖到本地，并将该依赖缓存到代理仓库，以后再次安装依赖时，就直接从代理仓库下载。</p>
+<ol>
+<li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li>
+<li>选择 <code>npm (proxy)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-proxy.png" alt></li>
+<li>填写名称及远程仓库地址 <code>http://registry.npmjs.org/</code>，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-proxy.png" alt></li>
+</ol>
+<h2 id="3-创建仓库分组"><a href="#3-创建仓库分组" class="headerlink" title="3. 创建仓库分组"></a>3. 创建仓库分组</h2><p>仓库分组用来将多个仓库（上面创建的私有仓库和代理仓库）放到一个分组中，然后通过一个唯一的 URL 地址来同时访问这些仓库。</p>
+<ol>
+<li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li>
+<li>选择 <code>npm (group)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-group.png" alt></li>
+<li>填写名称，勾选私有仓库和代理仓库到该分组，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-group.png" alt></li>
+<li>查看仓库分组信息如下，其中 <code>http://192.168.199.10:8081/repository/npm-group/</code> 就是我们要使用的唯一仓库 URL：<img src="/images/sonatype-nexus-repository-manager-npm/npm-group-info.png" alt></li>
+</ol>
+<h2 id="4-使用代理仓库安装依赖"><a href="#4-使用代理仓库安装依赖" class="headerlink" title="4. 使用代理仓库安装依赖"></a>4. 使用代理仓库安装依赖</h2><p>接下来我们使用刚刚创建的代理仓库来安装项目依赖。</p>
+<h3 id="4-1-通过命令行参数，指定仓库地址"><a href="#4-1-通过命令行参数，指定仓库地址" class="headerlink" title="4.1. 通过命令行参数，指定仓库地址"></a>4.1. 通过命令行参数，指定仓库地址</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --registry http://192.168.199.10:8081/repository/npm-group/ --verbose</span><br></pre></td></tr></table></figure>
+<p>可以看到已经开始从代理仓库下载依赖：<br><img src="/images/sonatype-nexus-repository-manager-npm/npm-install-registry.png" alt></p>
+<h3 id="4-2-修改-NPM-配置"><a href="#4-2-修改-NPM-配置" class="headerlink" title="4.2. 修改 NPM 配置"></a>4.2. 修改 NPM 配置</h3><p>通过修改 NPM 配置使用代理仓库，这样不用每次运行 <code>npm install</code> 时都需要通过参数指定仓库地址。可以使用命令或者直接修改配置文件。</p>
+<h4 id="4-2-1-使用命令修改-NPM-配置"><a href="#4-2-1-使用命令修改-NPM-配置" class="headerlink" title="4.2.1. 使用命令修改 NPM 配置"></a>4.2.1. 使用命令修改 NPM 配置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure>
+<h4 id="4-2-2-直接修改-NPM-配置文件"><a href="#4-2-2-直接修改-NPM-配置文件" class="headerlink" title="4.2.2. 直接修改 NPM 配置文件"></a>4.2.2. 直接修改 NPM 配置文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NPM 用户配置文件：C:/Users/[用户名]/.npmrc</span></span><br><span class="line">registry=http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure>
+<h2 id="5-发布项目到私有仓库"><a href="#5-发布项目到私有仓库" class="headerlink" title="5. 发布项目到私有仓库"></a>5. 发布项目到私有仓库</h2><p>发布项目到私有仓库，需要首先配置权限认证。</p>
+<h3 id="5-1-生成-auth-hash"><a href="#5-1-生成-auth-hash" class="headerlink" title="5.1. 生成 auth hash"></a>5.1. 生成 <code>auth hash</code></h3><p>使用命令 <code>echo -n &#39;username:password&#39; | openssl base64</code> 来生成 <code>auth hash</code>：<br><img src="/images/sonatype-nexus-repository-manager-npm/anth-hash.png" alt></p>
+<h3 id="5-2-修改-NPM-配置文件"><a href="#5-2-修改-NPM-配置文件" class="headerlink" title="5.2. 修改 NPM 配置文件"></a>5.2. 修改 NPM 配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">registry=http://192.168.199.10:8081/repository/npm-group/</span><br><span class="line">email=luotaoyeah@gmail.com</span><br><span class="line">always-auth=<span class="literal">true</span></span><br><span class="line">_auth=<span class="string">"YWRtaW46YWRtaW4="</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-发布项目"><a href="#5-3-发布项目" class="headerlink" title="5.3. 发布项目"></a>5.3. 发布项目</h3><p>两种方式指定发布到的仓库地址，命令参数或者配置 <code>package.json</code>：</p>
+<h4 id="5-3-1-通过命令行参数，指定发布仓库地址"><a href="#5-3-1-通过命令行参数，指定发布仓库地址" class="headerlink" title="5.3.1. 通过命令行参数，指定发布仓库地址"></a>5.3.1. 通过命令行参数，指定发布仓库地址</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm publish --registry http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure>
+<h4 id="5-3-2-修改-package-json，指定发布仓库地址"><a href="#5-3-2-修改-package-json，指定发布仓库地址" class="headerlink" title="5.3.2. 修改 package.json，指定发布仓库地址"></a>5.3.2. 修改 <code>package.json</code>，指定发布仓库地址</h4><p>修改 <code>package.json</code> 中 <code>publishConfig</code> 配置，指定发布地址：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"publishConfig": &#123;</span><br><span class="line">    "registry": "http://192.168.199.10:8081/repository/npm-private/"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后直接执行发布命令 <code>npm publish</code> 即可，项目成功发布到私有仓库：<br><img src="/images/sonatype-nexus-repository-manager-npm/publish-success.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2017/12/05/sonatype-nexus-repository-manager-npm/" data-id="cjsfrzl58000zskucyql81l4q" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2017/12/05</span>
+                
+<a class="article-category-link" href="/categories/NODE-JS/">NODE.JS</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nexus/">nexus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2017/08/02/vue-flowtype/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">Vue.js 配置 Flowtype 静态类型检查</span>
+        </a>
+    </li>
+    
+    
+    <li role="presentation">
+        <a href="/2018/01/02/vue-migrate-to-ts/" id="article-nav-newer" class="article-nav-link-wrap">
+            <span class="article-nav-link-title">Vue.js 逐步迁移到 TypeScript</span>
+            <i class="fa fa-caret-right fa-fw"></i>
+        </a>
+    </li>
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

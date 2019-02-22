@@ -1,0 +1,507 @@
+/**
+ * Custom Bootstrap and Theme Overrides
+ *
+ * Bootstrap designers: Feel free to remove all of the styles in this
+ * file to start a fresh new design. Most of the critical/functional
+ * styles are found within the other CSS files, with this one included last.
+ *
+ * Bootstrap and Hexo markdown style overrides would typically happen here.
+ */
+
+/* Globals */
+
+body {
+  font-family: '微软雅黑', 'Microsoft YaHei UI', '宋体', 'SimSun', Monaco, "Times New Roman", Times, serif;
+  color: #555555;
+  margin-top: 73px;
+  overflow-y: scroll;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 1em;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: #333333;
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+code {
+  background-color: #EEEEEE;
+  font-size: 80%;
+  display: inline-block !important;
+  border-radius: 3px !important;
+  margin: 0 2px !important;
+  padding: 1px 5px 0 !important;
+}
+
+a {
+  color: #0366D6;
+}
+
+a:hover {
+  color: #0366D6;
+}
+
+.fa {
+  margin-right: 0.25em;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 3px;
+}
+
+.nav-pills > li > a {
+  border-radius: 3px;
+}
+
+/*
+ * Blog header and description
+ */
+
+.blog-header {
+  padding-bottom: 20px;
+}
+
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: normal;
+}
+
+.blog-description {
+  font-size: 20px;
+  color: #999999;
+}
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 14px;
+}
+
+.blog-main > article:last-of-type {
+  margin-bottom: 30px;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+
+.sidebar-module h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+}
+
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-module-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-module-list-child {
+  padding-left: 25px;
+}
+
+/*
+ * Blog posts
+ */
+
+.article {
+  margin-bottom: 60px;
+}
+
+.article-header h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.article-header h1 a {
+  color: #333333;
+}
+
+.article-meta {
+  margin-bottom: 20px;
+  color: #999999;
+  font-size: 0.9em;
+}
+
+.article-meta > * {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.article-meta a {
+  color: inherit;
+}
+
+.article-entry .article-more-link {
+  margin: 15px 0;
+}
+
+.article-entry .thumbnail .caption {
+  padding: 0;
+}
+
+.article-entry > *:last-child {
+  margin-bottom: 15px;
+}
+
+/* article footer content */
+.article-footer {
+  font-size: 0.85em;
+  border: none;
+  padding: 0;
+}
+
+.article-footer:after { /* clearfix */
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.article-footer a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.article-footer a:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+/*
+ * Archives
+ */
+
+.archives-wrap {
+  margin-bottom: 30px;
+}
+
+.archive-year-wrap a,
+.archive-article .article-datetime a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.archive-article .article-datetime a {
+  color: #999999;
+  text-decoration: none;
+}
+
+/*
+ * Pagination
+ */
+#page-nav {
+  text-align: center;
+}
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+  padding: 40px 0;
+  color: #999999;
+  text-align: center;
+  background-color: #F9F9F9;
+  border-top: 1px solid #E5E5E5;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  border-color: #000000;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #24292E;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-header {
+  padding: 1px;
+}
+
+.navbar-nav {
+  padding: 1px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  border-radius: 3px;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.navbar-brand {
+  padding: 16px 15px 14px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 16px;
+    padding-bottom: 14px;
+  }
+}
+
+.blog-footer {
+  padding: 10px;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  color: #555555;
+  background-color: #FFFFFF;
+  border-color: #DDDDDD;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.panel {
+  border-radius: 3px;
+}
+
+.panel-footer {
+  background: #FFFFFF;
+  border-top-color: #D1D5DA;
+}
+
+.panel-default {
+  border-color: #D1D5DA;
+}
+
+.panel-default .panel-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.panel-default > .panel-heading {
+  background-color: #F6F8FA;
+  border-color: #D1D5DA;
+}
+
+.list-group-item a:hover,
+.list-group-item a:focus,
+.list-group-item a:visited {
+  background: #FBFBFB;
+}
+
+.list-group-item > .badge {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.panel-article .panel-title {
+  font-weight: bold;
+}
+
+.panel-article .panel-body {
+  padding: 30px;
+}
+
+.article-entry img {
+  margin: 5px auto;
+  border-radius: 3px;
+}
+
+.article-tag-list-link:before {
+  content: '#';
+}
+
+.article-date:before {
+  content: "";
+}
+
+.article-category-link:before {
+  content: "&";
+}
+
+.article-meta {
+  color: #999999;
+  font-size: 0.9em;
+  margin: -30px -30px 20px -30px;
+  padding: 10px 30px;
+}
+
+.pagination > li > a {
+  color: #0366D6;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > a:visited,
+.pagination > li > span:focus,
+.pagination > li > span:hover,
+.pagination > li > span:visited {
+  color: #0366D6;
+  background: #F9F9F9;
+}
+
+#article-nav {
+  margin: 0 0 20px 0;
+}
+
+#article-nav > li > a {
+  border: 1px solid #0366D6;
+}
+
+#article-nav > li > a:hover,
+#article-nav > li > a:focus,
+#article-nav > li > a:visited {
+  background: #F6F8FA;
+  border: 1px solid #0366D6;
+}
+
+#article-nav-older {
+  text-align: left;
+}
+
+#article-nav-newer {
+  text-align: right;
+}
+
+.nav > li > a.article-nav-link-wrap {
+  padding: 10px;
+}
+
+.label {
+  font-weight: normal;
+}
+
+.table td.code {
+  border: none;
+  padding: 0;
+}
+
+pre {
+  border-radius: 3px;
+}
+
+.article-tag-list {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:visited,
+.pagination > .disabled > span,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:visited {
+  color: rgba(36, 41, 46, 0.4);
+  background-color: #EFF3F6;
+  border-color: #DDDDDD;
+}
+
+.navbar-default .navbar-brand {
+  color: rgba(255, 255, 255, .9);
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:visited {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: rgba(255, 255, 255, .75);
+}
+
+.article-date:before,
+.article-author:before,
+.article-category-link:before,
+.article-tag-list-link:before {
+  margin: 0;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.highlight figcaption {
+  font-size: 1em !important;
+}
+
+.blog-sidebar a.sidebar-module-link {
+  display: inline-block;
+}
+
+.gist .table > tbody > tr > td {
+  border: none;
+}
+
+.gist .gist-data {
+  border-bottom: none !important;
+}
+
+.gist .gist-meta {
+  display: none;
+}
+
+.gist .gist-file {
+  border-radius: 2px !important;
+  border-bottom-color: #DDDDDD !important;
+}

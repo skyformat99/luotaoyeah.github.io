@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            Maven 入门指南 ① ：Maven 快速入门及简单使用 ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="0. 开发环境 MyEclipse 2014 JDK 1.8 Maven 3.2.1  1. 什么是 Maven ？Maven 是一个 Java 语言编写的开源项目管理工具，是 Apache 软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。 2. 下载及安装 下载：apache-maven-3.2.1-bin.zip； 解压： 配置环境变量（需要先配置好 %JAVA_HOME% 环">
+<meta name="keywords" content="maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 入门指南 ① ：Maven 快速入门及简单使用">
+<meta property="og:url" content="http://luotao.me/2014/06/02/maven-guide-01/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="0. 开发环境 MyEclipse 2014 JDK 1.8 Maven 3.2.1  1. 什么是 Maven ？Maven 是一个 Java 语言编写的开源项目管理工具，是 Apache 软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。 2. 下载及安装 下载：apache-maven-3.2.1-bin.zip； 解压： 配置环境变量（需要先配置好 %JAVA_HOME% 环">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-001.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-002.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-003.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-004.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-005.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-006.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-007.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-008.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-009.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-010.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-011.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-012.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-013.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-014.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-015.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-016.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-017.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-018.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-019.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-020.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-021.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-022.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-023.png">
+<meta property="og:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-024.png">
+<meta property="og:updated_time" content="2019-02-22T12:54:36.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 入门指南 ① ：Maven 快速入门及简单使用">
+<meta name="twitter:description" content="0. 开发环境 MyEclipse 2014 JDK 1.8 Maven 3.2.1  1. 什么是 Maven ？Maven 是一个 Java 语言编写的开源项目管理工具，是 Apache 软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。 2. 下载及安装 下载：apache-maven-3.2.1-bin.zip； 解压： 配置环境变量（需要先配置好 %JAVA_HOME% 环">
+<meta name="twitter:image" content="http://luotao.me/images/maven-guide-01/maven-guide-01-001.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-maven-guide-01" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                Maven 入门指南 ① ：Maven 快速入门及简单使用
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="0-开发环境"><a href="#0-开发环境" class="headerlink" title="0. 开发环境"></a>0. 开发环境</h2><ul>
+<li>MyEclipse 2014</li>
+<li>JDK 1.8</li>
+<li>Maven 3.2.1</li>
+</ul>
+<h2 id="1-什么是-Maven-？"><a href="#1-什么是-Maven-？" class="headerlink" title="1. 什么是 Maven ？"></a>1. 什么是 Maven ？</h2><p><a href="https://maven.apache.org/" target="_blank" rel="noopener">Maven</a> 是一个 Java 语言编写的开源项目管理工具，是 Apache 软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。</p>
+<h2 id="2-下载及安装"><a href="#2-下载及安装" class="headerlink" title="2. 下载及安装"></a>2. 下载及安装</h2><ul>
+<li>下载：<a href="https://archive.apache.org/dist/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.zip" target="_blank" rel="noopener">apache-maven-3.2.1-bin.zip</a>；</li>
+<li>解压：<img src="/images/maven-guide-01/maven-guide-01-001.png" alt></li>
+<li>配置环境变量（需要先配置好 <code>%JAVA_HOME%</code> 环境变量）：<img src="/images/maven-guide-01/maven-guide-01-002.png" alt> <img src="/images/maven-guide-01/maven-guide-01-003.png" alt></li>
+<li><code>mvn -v</code> 检查环境变量是否配置成功：<img src="/images/maven-guide-01/maven-guide-01-004.png" alt></li>
+<li>配置文件 <code>settings.xml</code>：<ul>
+<li><code>%MAVEN_HOME%/conf</code> 目录下的 <code>settings.xml</code>，该配置文件针对系统所有用户：<img src="/images/maven-guide-01/maven-guide-01-005.png" alt></li>
+<li>用户目录下 <code>.m2</code> 下的 <code>settings.xml</code>，针对当前用户；默认没有，可自行复制一份：<img src="/images/maven-guide-01/maven-guide-01-006.png" alt></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Maven-项目的目录结构"><a href="#3-Maven-项目的目录结构" class="headerlink" title="3. Maven 项目的目录结构"></a>3. Maven 项目的目录结构</h2><p><img src="/images/maven-guide-01/maven-guide-01-007.png" alt></p>
+<ul>
+<li><code>src/main/java</code> ： 存放项目.java 文件；</li>
+<li><code>src/main/resources</code> ： 存放项目资源文件；</li>
+<li><code>src/test/java</code> ： 存放测试类.java 文件；</li>
+<li><code>src/test/resources</code> ： 存放测试资源文件；</li>
+<li><code>target</code> ： 项目输出目录；</li>
+<li><code>pom.xml</code> ： Maven 核心文件（Project Object Model）；</li>
+</ul>
+<h2 id="4-使用-MyEclipse-创建-Maven-项目"><a href="#4-使用-MyEclipse-创建-Maven-项目" class="headerlink" title="4. 使用 MyEclipse 创建 Maven 项目"></a>4. 使用 MyEclipse 创建 Maven 项目</h2><ol>
+<li><p>MyEclipse 提供了 Maven4MyEclipse 插件，已经内置安装了 Maven；但我们通常使用自己下载配置的 Maven，在 Installations 选项中添加我们刚才下载配置的 Maven。Eclipse 可自行安装 m2eclipse 插件。<br><img src="/images/maven-guide-01/maven-guide-01-008.png" alt></p>
+</li>
+<li><p>新建一个 <code>Maven Project</code>：<img src="/images/maven-guide-01/maven-guide-01-009.png" alt></p>
+</li>
+<li><p>选择 <code>Workbench Location</code>：<img src="/images/maven-guide-01/maven-guide-01-010.png" alt></p>
+</li>
+<li><p>选择 <code>Maven Archetype</code>，这里我们选择 <code>maven-archetype-webapp</code>：<img src="/images/maven-guide-01/maven-guide-01-011.png" alt></p>
+</li>
+<li><p>设置 Maven 相关参数，<code>Group Id</code>，<code>Artifact Id</code>，<code>Version</code>，<code>Package</code>，它们共同组成 Maven 的坐标：<img src="/images/maven-guide-01/maven-guide-01-012.png" alt></p>
+</li>
+</ol>
+<h2 id="5-后续配置"><a href="#5-后续配置" class="headerlink" title="5. 后续配置"></a>5. 后续配置</h2><p>项目创建成功之后，我们看到 MyEclipse 默认只为我们创建了 <code>src/main/resources</code>，打开项目属性 - Java Build Path - Source 一栏，可看到 <code>src/main/java</code> 和 <code>src/test/java</code> 显示 missing：<br><img src="/images/maven-guide-01/maven-guide-01-013.png" alt></p>
+<p>打开 Libraries，编辑 JRE 环境，选择自己安装的 JDK：<br><img src="/images/maven-guide-01/maven-guide-01-014.png" alt> <img src="/images/maven-guide-01/maven-guide-01-015.png" alt></p>
+<p>这时，<code>src/main/java</code> 和 <code>src/test/java</code> 已经出来了，再自行添加 <code>src/test/resources</code> 目录：<br><img src="/images/maven-guide-01/maven-guide-01-016.png" alt></p>
+<p>接下来，设置 Project Facets。选择 Java 1.7 版本和 Dynamic Web Module 3.1 版本：<br><img src="/images/maven-guide-01/maven-guide-01-017.png" alt></p>
+<p>设置项目输出目录如下：<br><img src="/images/maven-guide-01/maven-guide-01-018.png" alt></p>
+<p>设置部署打包结构如下，删除测试相关目录：<br><img src="/images/maven-guide-01/maven-guide-01-019.png" alt></p>
+<h2 id="6-在-pom-xml-文件中添加相关-jar-包依赖"><a href="#6-在-pom-xml-文件中添加相关-jar-包依赖" class="headerlink" title="6. 在 pom.xml 文件中添加相关 jar 包依赖"></a>6. 在 pom.xml 文件中添加相关 jar 包依赖</h2><p>打开 <code>pom.xml</code> 文件，我们看到 Maven 已经为我们添加了 JUnit3.8.1 的依赖，这里我们改成 JUnit 4.11，同时添加 servlet-api 的依赖包：<br><img src="/images/maven-guide-01/maven-guide-01-020.png" alt></p>
+<p>保存之后，自动为我们添加了相关 jar 包。这时最开始缺少 servlet-api 相关类的错误提示已经没有了：<br><img src="/images/maven-guide-01/maven-guide-01-021.png" alt></p>
+<h2 id="7-构建及部署"><a href="#7-构建及部署" class="headerlink" title="7. 构建及部署"></a>7. 构建及部署</h2><p>右键 pom.xml - Run As - Maven -install：<br><img src="/images/maven-guide-01/maven-guide-01-022.png" alt></p>
+<p>打开 target 文件夹，我们看到生成了项目的部署文件：<br><img src="/images/maven-guide-01/maven-guide-01-023.png" alt></p>
+<p>部署项目到 Tomcat 应用服务器，访问项目：<br><img src="/images/maven-guide-01/maven-guide-01-024.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2014/06/02/maven-guide-01/" data-id="cjsfrzl4s000dskuco6j92ua5" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2014/06/02</span>
+                
+<a class="article-category-link" href="/categories/MAVEN/">MAVEN</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2014/04/19/eclipse-jdk-api/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">Eclipse / MyEclipse 添加 JDK API 帮助文档</span>
+        </a>
+    </li>
+    
+    
+    <li role="presentation">
+        <a href="/2014/06/06/maven-guide-02/" id="article-nav-newer" class="article-nav-link-wrap">
+            <span class="article-nav-link-title">Maven 入门指南 ② ：Maven 常用命令 &amp; 手动创建第一个 Maven 项目</span>
+            <i class="fa fa-caret-right fa-fw"></i>
+        </a>
+    </li>
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

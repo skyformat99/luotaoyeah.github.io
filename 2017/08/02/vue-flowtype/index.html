@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta charset="utf-8">
+        
+        <title>
+            
+            Vue.js 配置 Flowtype 静态类型检查 ·
+            
+            LUOTAO&#39;S BLOG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="1. Flowtype 是什么 ?Flowtype 是 Facebook 开源的一款针对 Javascript 的静态类型检查工具。Flowtype 的出现弥补了 Javascript 作为一种动态类型语言先天性的类型系统缺陷，使用 Flowtype 对现有的代码进行类型标注之后，Flowtype 可以在编译时进行类型检查，避免很多运行时才能发现的错误。 Vue.js 从 2.0 开始采用了 Fl">
+<meta name="keywords" content="vue,flowtype">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js 配置 Flowtype 静态类型检查">
+<meta property="og:url" content="http://luotao.me/2017/08/02/vue-flowtype/index.html">
+<meta property="og:site_name" content="LUOTAO&#39;S BLOG">
+<meta property="og:description" content="1. Flowtype 是什么 ?Flowtype 是 Facebook 开源的一款针对 Javascript 的静态类型检查工具。Flowtype 的出现弥补了 Javascript 作为一种动态类型语言先天性的类型系统缺陷，使用 Flowtype 对现有的代码进行类型标注之后，Flowtype 可以在编译时进行类型检查，避免很多运行时才能发现的错误。 Vue.js 从 2.0 开始采用了 Fl">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luotao.me/images/vue-flowtype/vue-flowtype-01.png">
+<meta property="og:image" content="http://luotao.me/images/vue-flowtype/vue-flowtype-02.png">
+<meta property="og:image" content="http://luotao.me/images/vue-flowtype/vue-flowtype-03.png">
+<meta property="og:image" content="http://luotao.me/images/vue-flowtype/vue-flowtype-04.png">
+<meta property="og:updated_time" content="2019-02-22T12:54:36.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js 配置 Flowtype 静态类型检查">
+<meta name="twitter:description" content="1. Flowtype 是什么 ?Flowtype 是 Facebook 开源的一款针对 Javascript 的静态类型检查工具。Flowtype 的出现弥补了 Javascript 作为一种动态类型语言先天性的类型系统缺陷，使用 Flowtype 对现有的代码进行类型标注之后，Flowtype 可以在编译时进行类型检查，避免很多运行时才能发现的错误。 Vue.js 从 2.0 开始采用了 Fl">
+<meta name="twitter:image" content="http://luotao.me/images/vue-flowtype/vue-flowtype-01.png">
+        
+        <link rel="alternate" href="/atom.xml" title="LUOTAO&#39;S BLOG" type="application/atom+xml">
+        
+        
+        <link rel="icon" href="/favicon.png">
+        
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        
+
+    </head>
+</html>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="/">LUOTAO'S BLOG</a>
+            
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu-navbar">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                    <a class href="/index.html">HOME</a>
+                </li>
+                
+                <li>
+                    <a class href="https://github.com/luotaoyeah">GITHUB</a>
+                </li>
+                
+            </ul>
+
+            <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <div class="blog-sidebar">
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ABOUT</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="/avatar.jpeg" style="width: 100%;border-radius: 3px;">
+            </div>
+            <div class="col-lg-6" style="word-wrap: break-word;word-break: break-word;">
+                <h4>luotao</h4>
+                <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">CATEGORIES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/ASP-NET/">ASP.NET</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MAVEN/">MAVEN</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/MYSQL/">MYSQL</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/NODE-JS/">NODE.JS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/OTHER/">OTHER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/REDIS/">REDIS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/SQL-SERVER/">SQL SERVER</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/VUE-JS/">VUE.JS</a></li></ul>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">TAGS</h3>
+    </div>
+    <div class="panel-body">
+        <a class="label label-default sidebar-module-link" href="/tags/asp-net/">asp.net</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/easyui/">easyui</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/eclipse/">eclipse</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/flowtype/">flowtype</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/homebrew/">homebrew</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mac/">mac</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/maven/">maven</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/mysql/">mysql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nexus/">nexus</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/nodejs/">nodejs</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/northwind/">northwind</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/npm/">npm</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/redis/">redis</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql/">sql</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/sql-server/">sql server</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/typescript/">typescript</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/uploadify/">uploadify</a>&nbsp;<a class="label label-default sidebar-module-link" href="/tags/vue/">vue</a>
+    </div>
+</div>
+
+
+    
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">ARCHIVES</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/">2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a></li></ul>
+    </div>
+</div>
+
+
+    
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 blog-main">
+                <article id="post-vue-flowtype" class="article article-type-post" itemscope itemprop="blogPost">
+
+    <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="padding: 7px 15px 8px;">
+            <div class="panel-title">
+                Vue.js 配置 Flowtype 静态类型检查
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    
+                    <h2 id="1-Flowtype-是什么"><a href="#1-Flowtype-是什么" class="headerlink" title="1. Flowtype 是什么 ?"></a>1. Flowtype 是什么 ?</h2><p><a href="https://flow.org/" target="_blank" rel="noopener">Flowtype</a> 是 Facebook 开源的一款针对 Javascript 的静态类型检查工具。Flowtype 的出现弥补了 Javascript 作为一种动态类型语言先天性的类型系统缺陷，使用 Flowtype 对现有的代码进行类型标注之后，Flowtype 可以在编译时进行类型检查，避免很多运行时才能发现的错误。</p>
+<p>Vue.js 从 2.0 开始采用了 Flowtype，作者尤雨溪在知乎上对为什么使用 Flowtype 有一篇回答：<a href="https://www.zhihu.com/question/46397274" target="_blank" rel="noopener">Vue2.0 为什么选用 Flow 进行静态代码检查而不是直接使用 TypeScript ?</a></p>
+<h2 id="2-如何在基于-Vue-js-的项目中使用-Flowtype"><a href="#2-如何在基于-Vue-js-的项目中使用-Flowtype" class="headerlink" title="2. 如何在基于 Vue.js 的项目中使用 Flowtype ?"></a>2. 如何在基于 Vue.js 的项目中使用 Flowtype ?</h2><blockquote>
+<p>本文示例项目使用 <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">vue-cli</a> 的 <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="noopener">webpack-simple</a> 模板搭建。</p>
+</blockquote>
+<h3 id="2-1-安装依赖包"><a href="#2-1-安装依赖包" class="headerlink" title="2.1 安装依赖包"></a>2.1 安装依赖包</h3><ul>
+<li><p>安装 Babel 相关依赖包：</p>
+<script src="https://gist.github.com/luotaoyeah/99af3cc9da24d2c4e6e11c0605b0fda7.js"></script>
+</li>
+<li><p>安装 ESLint 相关依赖包：</p>
+<script src="https://gist.github.com/luotaoyeah/a33e21bfef8554eeb652bba197b057f5.js"></script>
+</li>
+<li><p>安装 Flowtype 相关依赖包：</p>
+<script src="https://gist.github.com/luotaoyeah/e205b13fa4841e3e5f5fbd758283d447.js"></script>
+
+</li>
+</ul>
+<h3 id="2-2-配置插件"><a href="#2-2-配置插件" class="headerlink" title="2.2 配置插件"></a>2.2 配置插件</h3><p>项目根目录下已经存在<code>.babelrc</code>和<code>.eslintrc.js</code>配置文件，更新配置如下：</p>
+<script src="https://gist.github.com/luotaoyeah/5350794e0caff5448acaa5e336e35297.js"></script>
+<script src="https://gist.github.com/luotaoyeah/58f95494ab48f4966024fdba742f297f.js"></script>
+
+<p><code>.flowconfig</code>需要手动添加，或者在项目根目录执行<code>flow init</code>来生成。</p>
+<script src="https://gist.github.com/luotaoyeah/bfaa80898acc7cd3acd0a7ac2d8ca166.js"></script>
+
+<h3 id="2-3-设置-IDE"><a href="#2-3-设置-IDE" class="headerlink" title="2.3 设置 IDE"></a>2.3 设置 IDE</h3><p>Intellij IDEA（或 WebStorm） 对 Flowtype 提供了很好的支持，结合官方的 Vue.js 插件，编写 Vue.js 单文件组件变得特别方便。</p>
+<h4 id="2-3-1-启用-Node-js-and-NPM"><a href="#2-3-1-启用-Node-js-and-NPM" class="headerlink" title="2.3.1 启用 Node.js and NPM"></a>2.3.1 启用 Node.js and NPM</h4><p><img src="/images/vue-flowtype/vue-flowtype-01.png" alt></p>
+<h4 id="2-3-2-设置-Javascript-语言版本为-Flow"><a href="#2-3-2-设置-Javascript-语言版本为-Flow" class="headerlink" title="2.3.2 设置 Javascript 语言版本为 Flow"></a>2.3.2 设置 Javascript 语言版本为 Flow</h4><p><a href="https://www.jetbrains.com/help/webstorm/2017.1/flow-type-checker.html" target="_blank" rel="noopener">WebStorm 官方帮助文档</a></p>
+<p><img src="/images/vue-flowtype/vue-flowtype-02.png" alt></p>
+<h4 id="2-3-3-设置-Flowtype-相关-Inspection"><a href="#2-3-3-设置-Flowtype-相关-Inspection" class="headerlink" title="2.3.3 设置 Flowtype 相关 Inspection"></a>2.3.3 设置 Flowtype 相关 Inspection</h4><p><img src="/images/vue-flowtype/vue-flowtype-03.png" alt></p>
+<h3 id="2-4-使用-Flowtype"><a href="#2-4-使用-Flowtype" class="headerlink" title="2.4 使用 Flowtype"></a>2.4 使用 Flowtype</h3><p>在 .vue 文件 script 块中，添加注释<code>/* @flow */</code>或者<code>// @flow</code>来启用 Flowtype：</p>
+<script src="https://gist.github.com/luotaoyeah/7b1ed2866fc747e05d22c6bc7a3a0648.js"></script>
+
+<p>此时 IDE 检测到文件变化时，会自动运行 ESLint；由于我们配置了 ESLint 和 Flowtype 集成的相关插件，Flowtype errors 会以 ESLint errors 的形式实时地显示到控制台，而不用手动运行<code>flow check</code>命令：</p>
+<p><img src="/images/vue-flowtype/vue-flowtype-04.png" alt></p>
+
+                    
+                </div>
+
+                
+                
+
+                
+            </div>
+        </div>
+        <div class="panel-footer">
+            <footer class="article-footer">
+                <a data-url="http://luotao.me/2017/08/02/vue-flowtype/" data-id="cjsfrzl5c0014skuckukjayb9" class="article-share-link">
+                    SHARE
+                </a>
+                
+                <span class="article-tag-list-link" style="margin-right: 15px; color: #999999;">2017/08/02</span>
+                
+<a class="article-category-link" href="/categories/VUE-JS/">VUE.JS</a>
+
+
+                
+<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flowtype/">flowtype</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            </footer>
+        </div>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+    
+    <li role="presentation">
+        <a href="/2014/07/01/maven-guide-07/" id="article-nav-older" class="article-nav-link-wrap">
+            <i class="fa fa-caret-left fa-fw"></i>
+            <span class="article-nav-link-title">Maven 入门指南 ⑦ ：Maven 的生命周期和插件</span>
+        </a>
+    </li>
+    
+    
+    <li role="presentation">
+        <a href="/2017/12/05/sonatype-nexus-repository-manager-npm/" id="article-nav-newer" class="article-nav-link-wrap">
+            <span class="article-nav-link-title">使用 Nexus Repository Manager 搭建 NPM 私服</span>
+            <i class="fa fa-caret-right fa-fw"></i>
+        </a>
+    </li>
+    
+</ul>
+
+
+    
+    <div class="panel panel-default">
+        <div class="panel-body" style="padding: 15px 30px;">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://luotaoblog.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+        </div>
+    </div>
+</article>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

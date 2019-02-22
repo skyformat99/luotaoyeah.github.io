@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LUOTAO&#39;S BLOG</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://luotao.me/"/>
+  <updated>2019-02-22T08:10:15.335Z</updated>
+  <id>http://luotao.me/</id>
+  
+  <author>
+    <name>luotao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在 macOS 上使用 Homebrew 安装 Redis</title>
+    <link href="http://luotao.me/2018/02/05/how-to-install-redis-on-mac-using-brew/"/>
+    <id>http://luotao.me/2018/02/05/how-to-install-redis-on-mac-using-brew/</id>
+    <published>2018-02-05T12:07:00.000Z</published>
+    <updated>2019-02-22T08:10:15.335Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-环境"><a href="#0-环境" class="headerlink" title="0. 环境"></a>0. 环境</h2><ul><li>macOS v10.13.3</li><li>Homebrew v1.6.0</li><li>Redis v4.0.9</li></ul><h2 id="1-安装-Redis"><a href="#1-安装-Redis" class="headerlink" title="1. 安装 Redis"></a>1. 安装 Redis</h2><h3 id="1-1-查看-Redis-版本"><a href="#1-1-查看-Redis-版本" class="headerlink" title="1.1. 查看 Redis 版本"></a>1.1. 查看 Redis 版本</h3><script src="https://gist.github.com/luotaoyeah/c7498425851e794556fc0d0f0b81c922.js"></script><p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-01.png" alt></p><h3 id="1-2-安装-Redis"><a href="#1-2-安装-Redis" class="headerlink" title="1.2. 安装 Redis"></a>1.2. 安装 Redis</h3><script src="https://gist.github.com/luotaoyeah/43cc4094c135f820391716dc787e75e9.js"></script><p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-02.png" alt></p><h3 id="1-3-启动-Redis"><a href="#1-3-启动-Redis" class="headerlink" title="1.3. 启动 Redis"></a>1.3. 启动 Redis</h3><script src="https://gist.github.com/luotaoyeah/7428164276df2a925d78be1d6b3d486d.js"></script><p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-03.png" alt></p><h3 id="1-4-测试-Redis-是否运行"><a href="#1-4-测试-Redis-是否运行" class="headerlink" title="1.4. 测试 Redis 是否运行"></a>1.4. 测试 Redis 是否运行</h3><script src="https://gist.github.com/luotaoyeah/a78710ab6c17868879272a374a6a7c68.js"></script><p><img src="/images/how-to-install-redis-on-mac-using-brew/how-to-install-redis-on-mac-using-brew-04.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;0-环境&quot;&gt;&lt;a href=&quot;#0-环境&quot; class=&quot;headerlink&quot; title=&quot;0. 环境&quot;&gt;&lt;/a&gt;0. 环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;macOS v10.13.3&lt;/li&gt;
+&lt;li&gt;Homebrew v1.6.0&lt;/li&gt;
+&lt;li&gt;Redis
+      
+    
+    </summary>
+    
+      <category term="REDIS" scheme="http://luotao.me/categories/REDIS/"/>
+    
+    
+      <category term="mac" scheme="http://luotao.me/tags/mac/"/>
+    
+      <category term="homebrew" scheme="http://luotao.me/tags/homebrew/"/>
+    
+      <category term="redis" scheme="http://luotao.me/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在 macOS 上使用 Homebrew 安装 MySQL</title>
+    <link href="http://luotao.me/2018/02/01/how-to-install-mysql-on-mac-using-brew/"/>
+    <id>http://luotao.me/2018/02/01/how-to-install-mysql-on-mac-using-brew/</id>
+    <published>2018-02-01T13:08:02.000Z</published>
+    <updated>2019-02-22T12:54:36.642Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-环境"><a href="#0-环境" class="headerlink" title="0. 环境"></a>0. 环境</h2><ul><li>macOS v10.13.3</li><li>Homebrew v1.6.0</li><li>MySQL v5.7.21</li></ul><h2 id="1-安装-Homebrew"><a href="#1-安装-Homebrew" class="headerlink" title="1. 安装 Homebrew"></a>1. 安装 Homebrew</h2><script src="https://gist.github.com/luotaoyeah/855a4fb8f59e550eb67edc2d7ee34874.js"></script><h2 id="2-安装-MySQL"><a href="#2-安装-MySQL" class="headerlink" title="2. 安装 MySQL"></a>2. 安装 MySQL</h2><h3 id="2-1-查看-MySQL-版本"><a href="#2-1-查看-MySQL-版本" class="headerlink" title="2.1. 查看 MySQL 版本"></a>2.1. 查看 MySQL 版本</h3><script src="https://gist.github.com/luotaoyeah/8aae32f9e0e517f7d1f0619cce36c499.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-01.png" alt></p><h3 id="2-2-安装-MySQL"><a href="#2-2-安装-MySQL" class="headerlink" title="2.2. 安装 MySQL"></a>2.2. 安装 MySQL</h3><script src="https://gist.github.com/luotaoyeah/6edf7b1a0cdcb80e04b8e6579477c751.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-02.png" alt></p><h2 id="3-后续配置"><a href="#3-后续配置" class="headerlink" title="3. 后续配置"></a>3. 后续配置</h2><h3 id="3-1-安装-Homebrew-服务"><a href="#3-1-安装-Homebrew-服务" class="headerlink" title="3.1. 安装 Homebrew 服务"></a>3.1. 安装 Homebrew 服务</h3><script src="https://gist.github.com/luotaoyeah/aa4b4f9a58dbdde8a8e70af46e9e2139.js"></script><h3 id="3-2-查看所有-Homebrew-服务"><a href="#3-2-查看所有-Homebrew-服务" class="headerlink" title="3.2. 查看所有 Homebrew 服务"></a>3.2. 查看所有 Homebrew 服务</h3><script src="https://gist.github.com/luotaoyeah/548d4bc65cb90eecf9deb82c4874edfb.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-03.png" alt></p><h3 id="3-3-启动-MySQL-服务"><a href="#3-3-启动-MySQL-服务" class="headerlink" title="3.3. 启动 MySQL 服务"></a>3.3. 启动 MySQL 服务</h3><script src="https://gist.github.com/luotaoyeah/35274c82aa2faabbcafe96b57b11f1a7.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-04.png" alt></p><h3 id="3-4-查看-MySQL-版本"><a href="#3-4-查看-MySQL-版本" class="headerlink" title="3.4. 查看 MySQL 版本"></a>3.4. 查看 MySQL 版本</h3><script src="https://gist.github.com/luotaoyeah/59c18ea3102c24a0dcdc1746155c2586.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-05.png" alt></p><h3 id="3-5-设置-root-密码"><a href="#3-5-设置-root-密码" class="headerlink" title="3.5. 设置 root 密码"></a>3.5. 设置 root 密码</h3><script src="https://gist.github.com/luotaoyeah/38c559df3f57e3d1cba5f0473d808463.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-06.png" alt></p><h3 id="3-6-停止-MySQL-服务"><a href="#3-6-停止-MySQL-服务" class="headerlink" title="3.6. 停止 MySQL 服务"></a>3.6. 停止 MySQL 服务</h3><script src="https://gist.github.com/luotaoyeah/88a18b10c59bef42ca350c00cd1e82d7.js"></script><p><img src="/images/how-to-install-mysql-on-mac-using-brew/how-to-install-mysql-on-mac-using-brew-07.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;0-环境&quot;&gt;&lt;a href=&quot;#0-环境&quot; class=&quot;headerlink&quot; title=&quot;0. 环境&quot;&gt;&lt;/a&gt;0. 环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;macOS v10.13.3&lt;/li&gt;
+&lt;li&gt;Homebrew v1.6.0&lt;/li&gt;
+&lt;li&gt;MySQL
+      
+    
+    </summary>
+    
+      <category term="MYSQL" scheme="http://luotao.me/categories/MYSQL/"/>
+    
+    
+      <category term="mac" scheme="http://luotao.me/tags/mac/"/>
+    
+      <category term="homebrew" scheme="http://luotao.me/tags/homebrew/"/>
+    
+      <category term="mysql" scheme="http://luotao.me/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 逐步迁移到 TypeScript</title>
+    <link href="http://luotao.me/2018/01/02/vue-migrate-to-ts/"/>
+    <id>http://luotao.me/2018/01/02/vue-migrate-to-ts/</id>
+    <published>2018-01-02T13:08:02.000Z</published>
+    <updated>2019-02-22T12:54:36.623Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-WHY"><a href="#0-WHY" class="headerlink" title="0. WHY ?"></a>0. WHY ?</h2><p>JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷与不足也越来越明显，所谓”动态类型一时爽，代码重构火葬场”；而 TypeScript 作为 JavaScript 的超集，其引入的诸多特性，使得构建大型复杂应用成为可能。</p><p>从一开始就使用 TypeScript 来构建应用自然是最好的选择，如果应用一开始是使用 JavaScript 来构建，当增长到一定规模时，想要迁移到 TypeScript 应该如何实现呢 ?</p><h2 id="1-前置条件"><a href="#1-前置条件" class="headerlink" title="1. 前置条件"></a>1. 前置条件</h2><p>本文假设原有项目是基于 vue-cli 的 webpack 模板进行搭建的。</p><h2 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h2><p>在原有的基于 webpack 打包构建的流程之上，引入单独的处理器对 TypeScript 文件进行处理，实现 js 文件与 ts 文件共存且分别进行处理，从而实现 JavaScript 到 TypeScript 的逐步迁移。经过改造之后的项目将具备以下特性：</p><ul><li>js 文件和 ts 文件可以共存，互不影响；</li><li>js 模块和 ts 模块可以相互引用；</li><li>支持单文件组件（SFC）迁移到 ts；</li></ul><h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h2><h4 id="3-1-安装相关依赖"><a href="#3-1-安装相关依赖" class="headerlink" title="3.1. 安装相关依赖"></a>3.1. 安装相关依赖</h4><script src="https://gist.github.com/luotaoyeah/45c663f135b757c18a2beeb4430a0669.js"></script><h4 id="3-2-修改-webpack-配置"><a href="#3-2-修改-webpack-配置" class="headerlink" title="3.2. 修改 webpack 配置"></a>3.2. 修改 webpack 配置</h4><ul><li><code>resolve.extensions</code> 添加 <code>.ts</code>；</li><li>针对 ts 文件添加一个 <code>rule</code>；</li></ul><script src="https://gist.github.com/luotaoyeah/655ce5ad5ad942b14eec106e7259f74c.js"></script><h4 id="3-3-添加-tsconfig-json-配置文件"><a href="#3-3-添加-tsconfig-json-配置文件" class="headerlink" title="3.3. 添加 tsconfig.json 配置文件"></a>3.3. 添加 tsconfig.json 配置文件</h4><p>在根目录添加配置文件 <code>tsconfig.json</code>：</p><script src="https://gist.github.com/luotaoyeah/1cf4b72c4da9cd950ef999c21d6c3ef9.js"></script><p>其中配置项 <code>include</code> 使用了通配符：<code>[&quot;./src/**/*&quot;]</code>，这样就实现了只有 ts 相关的文件才会被 TypeScript 处理；</p><blockquote><p>If a segment of a glob pattern includes only <code>*</code> or <code>.*</code>, then only files with supported extensions are included (e.g. .ts, .tsx, and .d.ts by default with .js and .jsx if allowJs is set to true).</p></blockquote><blockquote><p><a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/tsconfig-json.html</a></p></blockquote><h4 id="3-4-添加类型定义文件"><a href="#3-4-添加类型定义文件" class="headerlink" title="3.4. 添加类型定义文件"></a>3.4. 添加类型定义文件</h4><ul><li>在根目录新建文件夹 <code>types</code>，用来存放类型定义文件；</li><li>添加类型定义文件 <code>shim-vue.d.ts</code>：<script src="https://gist.github.com/luotaoyeah/c38cc6de04d5b0392828ad28bb7c6269.js"></script></li></ul><h2 id="4-迁移"><a href="#4-迁移" class="headerlink" title="4. 迁移"></a>4. 迁移</h2><h4 id="4-1-js-文件"><a href="#4-1-js-文件" class="headerlink" title="4.1. js 文件"></a>4.1. js 文件</h4><p>对于 js 文件，</p><ul><li>将文件后缀修改为 <code>.ts</code>；</li><li>将 js 代码重构为 ts 代码；</li></ul><h4 id="4-2-vue-文件"><a href="#4-2-vue-文件" class="headerlink" title="4.2. vue 文件"></a>4.2. vue 文件</h4><p>对于 vue 文件，</p><ul><li>将 script 标签中的 js 代码分离到单独的 <code>.ts</code> 文件；</li><li>将 js 代码重构为 ts 代码；</li><li>在 vue 文件引入该 <code>.ts</code> 文件；</li></ul><p><img src="/images/vue-migrate-to-ts/vue-migrate-to-ts-01.png" alt><br><img src="/images/vue-migrate-to-ts/vue-migrate-to-ts-02.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;0-WHY&quot;&gt;&lt;a href=&quot;#0-WHY&quot; class=&quot;headerlink&quot; title=&quot;0. WHY ?&quot;&gt;&lt;/a&gt;0. WHY ?&lt;/h2&gt;&lt;p&gt;JavaScript 自有其作为动态语言的优势，但在面对增长越来越快，代码量越来越大的复杂应用时，其缺陷
+      
+    
+    </summary>
+    
+      <category term="VUE.JS" scheme="http://luotao.me/categories/VUE-JS/"/>
+    
+    
+      <category term="vue" scheme="http://luotao.me/tags/vue/"/>
+    
+      <category term="typescript" scheme="http://luotao.me/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Nexus Repository Manager 搭建 NPM 私服</title>
+    <link href="http://luotao.me/2017/12/05/sonatype-nexus-repository-manager-npm/"/>
+    <id>http://luotao.me/2017/12/05/sonatype-nexus-repository-manager-npm/</id>
+    <published>2017-12-05T09:03:35.000Z</published>
+    <updated>2019-02-22T12:54:36.739Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-WHY"><a href="#0-WHY" class="headerlink" title="0. WHY ?"></a>0. WHY ?</h2><p>网络环境太差的时候，使用 <code>npm install</code> 安装项目依赖是一件特别痛苦的事情。想到我以前使用 Nexus 搭建 Maven 私服的经历（<a href="http://www.cnblogs.com/luotaoyeah/p/3791966.html" target="_blank" rel="noopener">Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服</a>），我搜索了一下类似的搭建 NPM 私服的方法，发现 Nexus 竟然也同时支持创建 NPM 私服。经验证，效果还不错，强烈推荐大家试用。</p><h3 id="0-1-参考文档"><a href="#0-1-参考文档" class="headerlink" title="0.1 参考文档"></a>0.1 参考文档</h3><ol><li><a href="http://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages" target="_blank" rel="noopener">Using Nexus 3 as Your Repository – Part 2: npm Packages</a></li><li><a href="https://help.sonatype.com/display/NXRM3/Node+Packaged+Modules+and+npm+Registries" target="_blank" rel="noopener">Node Packaged Modules and npm Registries</a></li></ol><h2 id="1-创建私有仓库"><a href="#1-创建私有仓库" class="headerlink" title="1. 创建私有仓库"></a>1. 创建私有仓库</h2><p>私有仓库是用来发布公司内部或者个人私有项目的地方。项目发布到私有仓库之后，公司内部就可以像使用普通的 NPM 包一样安装 &amp; 更新该项目，同时又不会将项目代码泄露到公共仓库。</p><ol><li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li><li>选择 <code>npm (hosted)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-hosted.png" alt></li><li>填写名称，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-hosted.png" alt></li></ol><h2 id="2-创建代理仓库"><a href="#2-创建代理仓库" class="headerlink" title="2. 创建代理仓库"></a>2. 创建代理仓库</h2><p>代理仓库是用来缓存远程仓库依赖的地方。通过代理仓库安装项目依赖时，Nexus 首先会查找代理仓库，如果找到该依赖，则直接从代理仓库下载该依赖到本地；如果没找到该依赖，则首先从远程仓库（<a href="http://registry.npmjs.org/" target="_blank" rel="noopener">http://registry.npmjs.org/</a>）下载该依赖到本地，并将该依赖缓存到代理仓库，以后再次安装依赖时，就直接从代理仓库下载。</p><ol><li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li><li>选择 <code>npm (proxy)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-proxy.png" alt></li><li>填写名称及远程仓库地址 <code>http://registry.npmjs.org/</code>，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-proxy.png" alt></li></ol><h2 id="3-创建仓库分组"><a href="#3-创建仓库分组" class="headerlink" title="3. 创建仓库分组"></a>3. 创建仓库分组</h2><p>仓库分组用来将多个仓库（上面创建的私有仓库和代理仓库）放到一个分组中，然后通过一个唯一的 URL 地址来同时访问这些仓库。</p><ol><li>创建仓库：<img src="/images/sonatype-nexus-repository-manager-npm/create-repository.png" alt></li><li>选择 <code>npm (group)</code>：<img src="/images/sonatype-nexus-repository-manager-npm/select-npm-group.png" alt></li><li>填写名称，勾选私有仓库和代理仓库到该分组，并保存：<img src="/images/sonatype-nexus-repository-manager-npm/config-npm-group.png" alt></li><li>查看仓库分组信息如下，其中 <code>http://192.168.199.10:8081/repository/npm-group/</code> 就是我们要使用的唯一仓库 URL：<img src="/images/sonatype-nexus-repository-manager-npm/npm-group-info.png" alt></li></ol><h2 id="4-使用代理仓库安装依赖"><a href="#4-使用代理仓库安装依赖" class="headerlink" title="4. 使用代理仓库安装依赖"></a>4. 使用代理仓库安装依赖</h2><p>接下来我们使用刚刚创建的代理仓库来安装项目依赖。</p><h3 id="4-1-通过命令行参数，指定仓库地址"><a href="#4-1-通过命令行参数，指定仓库地址" class="headerlink" title="4.1. 通过命令行参数，指定仓库地址"></a>4.1. 通过命令行参数，指定仓库地址</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --registry http://192.168.199.10:8081/repository/npm-group/ --verbose</span><br></pre></td></tr></table></figure><p>可以看到已经开始从代理仓库下载依赖：<br><img src="/images/sonatype-nexus-repository-manager-npm/npm-install-registry.png" alt></p><h3 id="4-2-修改-NPM-配置"><a href="#4-2-修改-NPM-配置" class="headerlink" title="4.2. 修改 NPM 配置"></a>4.2. 修改 NPM 配置</h3><p>通过修改 NPM 配置使用代理仓库，这样不用每次运行 <code>npm install</code> 时都需要通过参数指定仓库地址。可以使用命令或者直接修改配置文件。</p><h4 id="4-2-1-使用命令修改-NPM-配置"><a href="#4-2-1-使用命令修改-NPM-配置" class="headerlink" title="4.2.1. 使用命令修改 NPM 配置"></a>4.2.1. 使用命令修改 NPM 配置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure><h4 id="4-2-2-直接修改-NPM-配置文件"><a href="#4-2-2-直接修改-NPM-配置文件" class="headerlink" title="4.2.2. 直接修改 NPM 配置文件"></a>4.2.2. 直接修改 NPM 配置文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NPM 用户配置文件：C:/Users/[用户名]/.npmrc</span></span><br><span class="line">registry=http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure><h2 id="5-发布项目到私有仓库"><a href="#5-发布项目到私有仓库" class="headerlink" title="5. 发布项目到私有仓库"></a>5. 发布项目到私有仓库</h2><p>发布项目到私有仓库，需要首先配置权限认证。</p><h3 id="5-1-生成-auth-hash"><a href="#5-1-生成-auth-hash" class="headerlink" title="5.1. 生成 auth hash"></a>5.1. 生成 <code>auth hash</code></h3><p>使用命令 <code>echo -n &#39;username:password&#39; | openssl base64</code> 来生成 <code>auth hash</code>：<br><img src="/images/sonatype-nexus-repository-manager-npm/anth-hash.png" alt></p><h3 id="5-2-修改-NPM-配置文件"><a href="#5-2-修改-NPM-配置文件" class="headerlink" title="5.2. 修改 NPM 配置文件"></a>5.2. 修改 NPM 配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">registry=http://192.168.199.10:8081/repository/npm-group/</span><br><span class="line">email=luotaoyeah@gmail.com</span><br><span class="line">always-auth=<span class="literal">true</span></span><br><span class="line">_auth=<span class="string">"YWRtaW46YWRtaW4="</span></span><br></pre></td></tr></table></figure><h3 id="5-3-发布项目"><a href="#5-3-发布项目" class="headerlink" title="5.3. 发布项目"></a>5.3. 发布项目</h3><p>两种方式指定发布到的仓库地址，命令参数或者配置 <code>package.json</code>：</p><h4 id="5-3-1-通过命令行参数，指定发布仓库地址"><a href="#5-3-1-通过命令行参数，指定发布仓库地址" class="headerlink" title="5.3.1. 通过命令行参数，指定发布仓库地址"></a>5.3.1. 通过命令行参数，指定发布仓库地址</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm publish --registry http://192.168.199.10:8081/repository/npm-group/</span><br></pre></td></tr></table></figure><h4 id="5-3-2-修改-package-json，指定发布仓库地址"><a href="#5-3-2-修改-package-json，指定发布仓库地址" class="headerlink" title="5.3.2. 修改 package.json，指定发布仓库地址"></a>5.3.2. 修改 <code>package.json</code>，指定发布仓库地址</h4><p>修改 <code>package.json</code> 中 <code>publishConfig</code> 配置，指定发布地址：</p><figure class="highlight"><table><tr><td class="code"><pre><span class="line">"publishConfig": &#123;</span><br><span class="line">    "registry": "http://192.168.199.10:8081/repository/npm-private/"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后直接执行发布命令 <code>npm publish</code> 即可，项目成功发布到私有仓库：<br><img src="/images/sonatype-nexus-repository-manager-npm/publish-success.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;0-WHY&quot;&gt;&lt;a href=&quot;#0-WHY&quot; class=&quot;headerlink&quot; title=&quot;0. WHY ?&quot;&gt;&lt;/a&gt;0. WHY ?&lt;/h2&gt;&lt;p&gt;网络环境太差的时候，使用 &lt;code&gt;npm install&lt;/code&gt; 安装项目依赖是一件特别痛苦的
+      
+    
+    </summary>
+    
+      <category term="NODE.JS" scheme="http://luotao.me/categories/NODE-JS/"/>
+    
+    
+      <category term="nodejs" scheme="http://luotao.me/tags/nodejs/"/>
+    
+      <category term="npm" scheme="http://luotao.me/tags/npm/"/>
+    
+      <category term="nexus" scheme="http://luotao.me/tags/nexus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js 配置 Flowtype 静态类型检查</title>
+    <link href="http://luotao.me/2017/08/02/vue-flowtype/"/>
+    <id>http://luotao.me/2017/08/02/vue-flowtype/</id>
+    <published>2017-08-02T12:07:37.000Z</published>
+    <updated>2019-02-22T12:54:36.771Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-Flowtype-是什么"><a href="#1-Flowtype-是什么" class="headerlink" title="1. Flowtype 是什么 ?"></a>1. Flowtype 是什么 ?</h2><p><a href="https://flow.org/" target="_blank" rel="noopener">Flowtype</a> 是 Facebook 开源的一款针对 Javascript 的静态类型检查工具。Flowtype 的出现弥补了 Javascript 作为一种动态类型语言先天性的类型系统缺陷，使用 Flowtype 对现有的代码进行类型标注之后，Flowtype 可以在编译时进行类型检查，避免很多运行时才能发现的错误。</p><p>Vue.js 从 2.0 开始采用了 Flowtype，作者尤雨溪在知乎上对为什么使用 Flowtype 有一篇回答：<a href="https://www.zhihu.com/question/46397274" target="_blank" rel="noopener">Vue2.0 为什么选用 Flow 进行静态代码检查而不是直接使用 TypeScript ?</a></p><h2 id="2-如何在基于-Vue-js-的项目中使用-Flowtype"><a href="#2-如何在基于-Vue-js-的项目中使用-Flowtype" class="headerlink" title="2. 如何在基于 Vue.js 的项目中使用 Flowtype ?"></a>2. 如何在基于 Vue.js 的项目中使用 Flowtype ?</h2><blockquote><p>本文示例项目使用 <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">vue-cli</a> 的 <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="noopener">webpack-simple</a> 模板搭建。</p></blockquote><h3 id="2-1-安装依赖包"><a href="#2-1-安装依赖包" class="headerlink" title="2.1 安装依赖包"></a>2.1 安装依赖包</h3><ul><li><p>安装 Babel 相关依赖包：</p><script src="https://gist.github.com/luotaoyeah/99af3cc9da24d2c4e6e11c0605b0fda7.js"></script></li><li><p>安装 ESLint 相关依赖包：</p><script src="https://gist.github.com/luotaoyeah/a33e21bfef8554eeb652bba197b057f5.js"></script></li><li><p>安装 Flowtype 相关依赖包：</p><script src="https://gist.github.com/luotaoyeah/e205b13fa4841e3e5f5fbd758283d447.js"></script></li></ul><h3 id="2-2-配置插件"><a href="#2-2-配置插件" class="headerlink" title="2.2 配置插件"></a>2.2 配置插件</h3><p>项目根目录下已经存在<code>.babelrc</code>和<code>.eslintrc.js</code>配置文件，更新配置如下：</p><script src="https://gist.github.com/luotaoyeah/5350794e0caff5448acaa5e336e35297.js"></script><script src="https://gist.github.com/luotaoyeah/58f95494ab48f4966024fdba742f297f.js"></script><p><code>.flowconfig</code>需要手动添加，或者在项目根目录执行<code>flow init</code>来生成。</p><script src="https://gist.github.com/luotaoyeah/bfaa80898acc7cd3acd0a7ac2d8ca166.js"></script><h3 id="2-3-设置-IDE"><a href="#2-3-设置-IDE" class="headerlink" title="2.3 设置 IDE"></a>2.3 设置 IDE</h3><p>Intellij IDEA（或 WebStorm） 对 Flowtype 提供了很好的支持，结合官方的 Vue.js 插件，编写 Vue.js 单文件组件变得特别方便。</p><h4 id="2-3-1-启用-Node-js-and-NPM"><a href="#2-3-1-启用-Node-js-and-NPM" class="headerlink" title="2.3.1 启用 Node.js and NPM"></a>2.3.1 启用 Node.js and NPM</h4><p><img src="/images/vue-flowtype/vue-flowtype-01.png" alt></p><h4 id="2-3-2-设置-Javascript-语言版本为-Flow"><a href="#2-3-2-设置-Javascript-语言版本为-Flow" class="headerlink" title="2.3.2 设置 Javascript 语言版本为 Flow"></a>2.3.2 设置 Javascript 语言版本为 Flow</h4><p><a href="https://www.jetbrains.com/help/webstorm/2017.1/flow-type-checker.html" target="_blank" rel="noopener">WebStorm 官方帮助文档</a></p><p><img src="/images/vue-flowtype/vue-flowtype-02.png" alt></p><h4 id="2-3-3-设置-Flowtype-相关-Inspection"><a href="#2-3-3-设置-Flowtype-相关-Inspection" class="headerlink" title="2.3.3 设置 Flowtype 相关 Inspection"></a>2.3.3 设置 Flowtype 相关 Inspection</h4><p><img src="/images/vue-flowtype/vue-flowtype-03.png" alt></p><h3 id="2-4-使用-Flowtype"><a href="#2-4-使用-Flowtype" class="headerlink" title="2.4 使用 Flowtype"></a>2.4 使用 Flowtype</h3><p>在 .vue 文件 script 块中，添加注释<code>/* @flow */</code>或者<code>// @flow</code>来启用 Flowtype：</p><script src="https://gist.github.com/luotaoyeah/7b1ed2866fc747e05d22c6bc7a3a0648.js"></script><p>此时 IDE 检测到文件变化时，会自动运行 ESLint；由于我们配置了 ESLint 和 Flowtype 集成的相关插件，Flowtype errors 会以 ESLint errors 的形式实时地显示到控制台，而不用手动运行<code>flow check</code>命令：</p><p><img src="/images/vue-flowtype/vue-flowtype-04.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-Flowtype-是什么&quot;&gt;&lt;a href=&quot;#1-Flowtype-是什么&quot; class=&quot;headerlink&quot; title=&quot;1. Flowtype 是什么 ?&quot;&gt;&lt;/a&gt;1. Flowtype 是什么 ?&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https:/
+      
+    
+    </summary>
+    
+      <category term="VUE.JS" scheme="http://luotao.me/categories/VUE-JS/"/>
+    
+    
+      <category term="vue" scheme="http://luotao.me/tags/vue/"/>
+    
+      <category term="flowtype" scheme="http://luotao.me/tags/flowtype/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ⑦ ：Maven 的生命周期和插件</title>
+    <link href="http://luotao.me/2014/07/01/maven-guide-07/"/>
+    <id>http://luotao.me/2014/07/01/maven-guide-07/</id>
+    <published>2014-07-01T13:04:34.000Z</published>
+    <updated>2019-02-22T12:54:36.754Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3819001.html" target="_blank" rel="noopener">Maven 入门指南 ⑦：Maven 的生命周期和插件 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3819001.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ⑦：Maven 的生命周期和插件 - 罗韬 -
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ⑥ ：将项目发布到私服</title>
+    <link href="http://luotao.me/2014/06/30/maven-guide-06/"/>
+    <id>http://luotao.me/2014/06/30/maven-guide-06/</id>
+    <published>2014-06-30T15:20:34.000Z</published>
+    <updated>2019-02-22T12:54:36.656Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3817465.html" target="_blank" rel="noopener">Maven 入门指南 ⑥：将项目发布到私服 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3817465.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ⑥：将项目发布到私服 - 罗韬 - 博客园&lt;/
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ⑤ ：使用 Nexus 搭建 Maven 私服</title>
+    <link href="http://luotao.me/2014/06/17/maven-guide-05/"/>
+    <id>http://luotao.me/2014/06/17/maven-guide-05/</id>
+    <published>2014-06-16T22:37:34.000Z</published>
+    <updated>2019-02-22T12:54:36.587Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3791966.html" target="_blank" rel="noopener">Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3791966.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ⑤：使用 Nexus 搭建 Maven 私服 
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ④ ：仓库</title>
+    <link href="http://luotao.me/2014/06/16/maven-guide-04/"/>
+    <id>http://luotao.me/2014/06/16/maven-guide-04/</id>
+    <published>2014-06-16T15:01:34.000Z</published>
+    <updated>2019-02-22T12:54:36.519Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3785044.html" target="_blank" rel="noopener">Maven 入门指南 ④：仓库 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3785044.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ④：仓库 - 罗韬 - 博客园&lt;/a&gt;&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ③ ：坐标和依赖</title>
+    <link href="http://luotao.me/2014/06/13/maven-guide-03/"/>
+    <id>http://luotao.me/2014/06/13/maven-guide-03/</id>
+    <published>2014-06-12T18:00:00.000Z</published>
+    <updated>2019-02-22T12:54:36.539Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3784901.html" target="_blank" rel="noopener">Maven 入门指南 ③：坐标和依赖 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3784901.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ③：坐标和依赖 - 罗韬 - 博客园&lt;/a&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ② ：Maven 常用命令 &amp; 手动创建第一个 Maven 项目</title>
+    <link href="http://luotao.me/2014/06/06/maven-guide-02/"/>
+    <id>http://luotao.me/2014/06/06/maven-guide-02/</id>
+    <published>2014-06-06T14:30:34.000Z</published>
+    <updated>2019-02-22T12:54:36.501Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/luotaoyeah/p/3764982.html" target="_blank" rel="noopener">Maven 入门指南 ② ：Maven 常用命令，手动创建第一个 Maven 项目 - 罗韬 - 博客园</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luotaoyeah/p/3764982.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maven 入门指南 ② ：Maven 常用命令，手动创建第一个 M
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven 入门指南 ① ：Maven 快速入门及简单使用</title>
+    <link href="http://luotao.me/2014/06/02/maven-guide-01/"/>
+    <id>http://luotao.me/2014/06/02/maven-guide-01/</id>
+    <published>2014-06-02T12:07:37.000Z</published>
+    <updated>2019-02-22T12:54:36.692Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-开发环境"><a href="#0-开发环境" class="headerlink" title="0. 开发环境"></a>0. 开发环境</h2><ul><li>MyEclipse 2014</li><li>JDK 1.8</li><li>Maven 3.2.1</li></ul><h2 id="1-什么是-Maven-？"><a href="#1-什么是-Maven-？" class="headerlink" title="1. 什么是 Maven ？"></a>1. 什么是 Maven ？</h2><p><a href="https://maven.apache.org/" target="_blank" rel="noopener">Maven</a> 是一个 Java 语言编写的开源项目管理工具，是 Apache 软件基金会的顶级项目。主要用于项目构建，依赖管理，项目信息管理。</p><h2 id="2-下载及安装"><a href="#2-下载及安装" class="headerlink" title="2. 下载及安装"></a>2. 下载及安装</h2><ul><li>下载：<a href="https://archive.apache.org/dist/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.zip" target="_blank" rel="noopener">apache-maven-3.2.1-bin.zip</a>；</li><li>解压：<img src="/images/maven-guide-01/maven-guide-01-001.png" alt></li><li>配置环境变量（需要先配置好 <code>%JAVA_HOME%</code> 环境变量）：<img src="/images/maven-guide-01/maven-guide-01-002.png" alt> <img src="/images/maven-guide-01/maven-guide-01-003.png" alt></li><li><code>mvn -v</code> 检查环境变量是否配置成功：<img src="/images/maven-guide-01/maven-guide-01-004.png" alt></li><li>配置文件 <code>settings.xml</code>：<ul><li><code>%MAVEN_HOME%/conf</code> 目录下的 <code>settings.xml</code>，该配置文件针对系统所有用户：<img src="/images/maven-guide-01/maven-guide-01-005.png" alt></li><li>用户目录下 <code>.m2</code> 下的 <code>settings.xml</code>，针对当前用户；默认没有，可自行复制一份：<img src="/images/maven-guide-01/maven-guide-01-006.png" alt></li></ul></li></ul><h2 id="3-Maven-项目的目录结构"><a href="#3-Maven-项目的目录结构" class="headerlink" title="3. Maven 项目的目录结构"></a>3. Maven 项目的目录结构</h2><p><img src="/images/maven-guide-01/maven-guide-01-007.png" alt></p><ul><li><code>src/main/java</code> ： 存放项目.java 文件；</li><li><code>src/main/resources</code> ： 存放项目资源文件；</li><li><code>src/test/java</code> ： 存放测试类.java 文件；</li><li><code>src/test/resources</code> ： 存放测试资源文件；</li><li><code>target</code> ： 项目输出目录；</li><li><code>pom.xml</code> ： Maven 核心文件（Project Object Model）；</li></ul><h2 id="4-使用-MyEclipse-创建-Maven-项目"><a href="#4-使用-MyEclipse-创建-Maven-项目" class="headerlink" title="4. 使用 MyEclipse 创建 Maven 项目"></a>4. 使用 MyEclipse 创建 Maven 项目</h2><ol><li><p>MyEclipse 提供了 Maven4MyEclipse 插件，已经内置安装了 Maven；但我们通常使用自己下载配置的 Maven，在 Installations 选项中添加我们刚才下载配置的 Maven。Eclipse 可自行安装 m2eclipse 插件。<br><img src="/images/maven-guide-01/maven-guide-01-008.png" alt></p></li><li><p>新建一个 <code>Maven Project</code>：<img src="/images/maven-guide-01/maven-guide-01-009.png" alt></p></li><li><p>选择 <code>Workbench Location</code>：<img src="/images/maven-guide-01/maven-guide-01-010.png" alt></p></li><li><p>选择 <code>Maven Archetype</code>，这里我们选择 <code>maven-archetype-webapp</code>：<img src="/images/maven-guide-01/maven-guide-01-011.png" alt></p></li><li><p>设置 Maven 相关参数，<code>Group Id</code>，<code>Artifact Id</code>，<code>Version</code>，<code>Package</code>，它们共同组成 Maven 的坐标：<img src="/images/maven-guide-01/maven-guide-01-012.png" alt></p></li></ol><h2 id="5-后续配置"><a href="#5-后续配置" class="headerlink" title="5. 后续配置"></a>5. 后续配置</h2><p>项目创建成功之后，我们看到 MyEclipse 默认只为我们创建了 <code>src/main/resources</code>，打开项目属性 - Java Build Path - Source 一栏，可看到 <code>src/main/java</code> 和 <code>src/test/java</code> 显示 missing：<br><img src="/images/maven-guide-01/maven-guide-01-013.png" alt></p><p>打开 Libraries，编辑 JRE 环境，选择自己安装的 JDK：<br><img src="/images/maven-guide-01/maven-guide-01-014.png" alt> <img src="/images/maven-guide-01/maven-guide-01-015.png" alt></p><p>这时，<code>src/main/java</code> 和 <code>src/test/java</code> 已经出来了，再自行添加 <code>src/test/resources</code> 目录：<br><img src="/images/maven-guide-01/maven-guide-01-016.png" alt></p><p>接下来，设置 Project Facets。选择 Java 1.7 版本和 Dynamic Web Module 3.1 版本：<br><img src="/images/maven-guide-01/maven-guide-01-017.png" alt></p><p>设置项目输出目录如下：<br><img src="/images/maven-guide-01/maven-guide-01-018.png" alt></p><p>设置部署打包结构如下，删除测试相关目录：<br><img src="/images/maven-guide-01/maven-guide-01-019.png" alt></p><h2 id="6-在-pom-xml-文件中添加相关-jar-包依赖"><a href="#6-在-pom-xml-文件中添加相关-jar-包依赖" class="headerlink" title="6. 在 pom.xml 文件中添加相关 jar 包依赖"></a>6. 在 pom.xml 文件中添加相关 jar 包依赖</h2><p>打开 <code>pom.xml</code> 文件，我们看到 Maven 已经为我们添加了 JUnit3.8.1 的依赖，这里我们改成 JUnit 4.11，同时添加 servlet-api 的依赖包：<br><img src="/images/maven-guide-01/maven-guide-01-020.png" alt></p><p>保存之后，自动为我们添加了相关 jar 包。这时最开始缺少 servlet-api 相关类的错误提示已经没有了：<br><img src="/images/maven-guide-01/maven-guide-01-021.png" alt></p><h2 id="7-构建及部署"><a href="#7-构建及部署" class="headerlink" title="7. 构建及部署"></a>7. 构建及部署</h2><p>右键 pom.xml - Run As - Maven -install：<br><img src="/images/maven-guide-01/maven-guide-01-022.png" alt></p><p>打开 target 文件夹，我们看到生成了项目的部署文件：<br><img src="/images/maven-guide-01/maven-guide-01-023.png" alt></p><p>部署项目到 Tomcat 应用服务器，访问项目：<br><img src="/images/maven-guide-01/maven-guide-01-024.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;0-开发环境&quot;&gt;&lt;a href=&quot;#0-开发环境&quot; class=&quot;headerlink&quot; title=&quot;0. 开发环境&quot;&gt;&lt;/a&gt;0. 开发环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;MyEclipse 2014&lt;/li&gt;
+&lt;li&gt;JDK 1.8&lt;/li&gt;
+&lt;li&gt;Maven
+      
+    
+    </summary>
+    
+      <category term="MAVEN" scheme="http://luotao.me/categories/MAVEN/"/>
+    
+    
+      <category term="maven" scheme="http://luotao.me/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse / MyEclipse 添加 JDK API 帮助文档</title>
+    <link href="http://luotao.me/2014/04/19/eclipse-jdk-api/"/>
+    <id>http://luotao.me/2014/04/19/eclipse-jdk-api/</id>
+    <published>2014-04-18T17:00:02.000Z</published>
+    <updated>2018-04-07T01:24:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-下载解压"><a href="#1-下载解压" class="headerlink" title="1. 下载解压"></a>1. 下载解压</h2><p>下载：<a href="http://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html" target="_blank" rel="noopener">Java SE Development Kit 8 Documentation</a>；</p><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><p><img src="/images/eclipse-jdk-api/eclipse-jdk-api-01.png" alt><br><img src="/images/eclipse-jdk-api/eclipse-jdk-api-02.png" alt><br><img src="/images/eclipse-jdk-api/eclipse-jdk-api-03.png" alt><br><img src="/images/eclipse-jdk-api/eclipse-jdk-api-04.png" alt></p><h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h2><p>鼠标光标定位到要查询的代码处，<code>F1</code> 打开 Help 标签页，点击 <code>Javadoc for &#39;xxx.xxx&#39;</code>；<br><img src="/images/eclipse-jdk-api/eclipse-jdk-api-05.png" alt><br><img src="/images/eclipse-jdk-api/eclipse-jdk-api-06.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-下载解压&quot;&gt;&lt;a href=&quot;#1-下载解压&quot; class=&quot;headerlink&quot; title=&quot;1. 下载解压&quot;&gt;&lt;/a&gt;1. 下载解压&lt;/h2&gt;&lt;p&gt;下载：&lt;a href=&quot;http://www.oracle.com/technetwork/java/j
+      
+    
+    </summary>
+    
+      <category term="OTHER" scheme="http://luotao.me/categories/OTHER/"/>
+    
+    
+      <category term="eclipse" scheme="http://luotao.me/tags/eclipse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASP.NET MVC 4 使用 Uploadify 文件上传插件</title>
+    <link href="http://luotao.me/2013/09/14/asp-net-mvc-uploadify/"/>
+    <id>http://luotao.me/2013/09/14/asp-net-mvc-uploadify/</id>
+    <published>2013-09-14T04:47:02.000Z</published>
+    <updated>2019-02-22T12:54:36.605Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p>官网下载免费的 Flash 版本的开发包：<a href="http://www.uploadify.com/download/" target="_blank" rel="noopener">http://www.uploadify.com/download/</a>；</p><p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-01.png" alt></p><h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2. 解压"></a>2. 解压</h2><p>解压后，需要用到下面几个文件：</p><p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-02.png" alt></p><h2 id="3-前端配置"><a href="#3-前端配置" class="headerlink" title="3. 前端配置"></a>3. 前端配置</h2><h4 id="3-1-页面添加-CSS-和-JS-引用"><a href="#3-1-页面添加-CSS-和-JS-引用" class="headerlink" title="3.1. 页面添加 CSS 和 JS 引用"></a>3.1. 页面添加 CSS 和 JS 引用</h4><script src="https://gist.github.com/luotaoyeah/6cf3d7b79f2a683c4adbd7263998cc05.js"></script><h4 id="3-2-添加上传按钮标签"><a href="#3-2-添加上传按钮标签" class="headerlink" title="3.2. 添加上传按钮标签"></a>3.2. 添加上传按钮标签</h4><script src="https://gist.github.com/luotaoyeah/d4250e7c2af06c65c096ca11f3a6a5e1.js"></script><h4 id="3-3-初始化插件"><a href="#3-3-初始化插件" class="headerlink" title="3.3. 初始化插件"></a>3.3. 初始化插件</h4><script src="https://gist.github.com/luotaoyeah/8aa5ceaeeca73d58c52151385a8842b2.js"></script><h2 id="4-后端代码"><a href="#4-后端代码" class="headerlink" title="4. 后端代码"></a>4. 后端代码</h2><script src="https://gist.github.com/luotaoyeah/e0098b3e0e93ac3aca5ba7a1dd6791c0.js"></script><h2 id="5-参数说明"><a href="#5-参数说明" class="headerlink" title="5. 参数说明"></a>5. 参数说明</h2><ul><li><code>uploader: &#39;/article/upload&#39;</code> 请求地址，对应后端进行处理的 Action；</li><li><p><code>formData:{ &quot;imgType&quot;: &quot;normal&quot; }</code> 动态设置表单数据，一般在 <code>onUploadStart</code> 事件中进行处理：</p><script src="https://gist.github.com/luotaoyeah/933a1f8c398bf668811b336aa14d489f.js"></script><pre><code>如果参数名与初始化的 formData 中的参数名一样，参数值将被覆盖，否则添加；在开始上传之前执行动态设置都是可以的，例如在两个 checkbox（使用 bootstrap-switch 插件）的状态切换时进行设置：</code></pre><script src="https://gist.github.com/luotaoyeah/6d815bb02ea2202442719dcae7cddd11.js"></script></li></ul><ul><li><p><code>onUploadSuccess</code> 事件处理函数的 3 个参数：</p><ul><li><code>file</code> 包含原始文件的信息；</li><li><code>response</code> 后台返回（true 或 false）；</li><li><code>data</code> 后台返回数据，试例中为 JSON 对象；</li></ul></li><li><p>其他详细参数，请参考官方文档：<a href="http://www.uploadify.com/documentation/" target="_blank" rel="noopener">http://www.uploadify.com/documentation/</a></p></li></ul><h2 id="6-效果预览"><a href="#6-效果预览" class="headerlink" title="6. 效果预览"></a>6. 效果预览</h2><p><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-03.png" alt><br><img src="/images/asp-net-mvc-uploadify/asp-net-mvc-uploadify-04.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-下载&quot;&gt;&lt;a href=&quot;#1-下载&quot; class=&quot;headerlink&quot; title=&quot;1. 下载&quot;&gt;&lt;/a&gt;1. 下载&lt;/h2&gt;&lt;p&gt;官网下载免费的 Flash 版本的开发包：&lt;a href=&quot;http://www.uploadify.com/downl
+      
+    
+    </summary>
+    
+      <category term="ASP.NET" scheme="http://luotao.me/categories/ASP-NET/"/>
+    
+    
+      <category term="asp.net" scheme="http://luotao.me/tags/asp-net/"/>
+    
+      <category term="uploadify" scheme="http://luotao.me/tags/uploadify/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EasyUI Accordion 的 Panel 初始化时全部折叠</title>
+    <link href="http://luotao.me/2013/09/10/easyui-accordion-panel-collapse/"/>
+    <id>http://luotao.me/2013/09/10/easyui-accordion-panel-collapse/</id>
+    <published>2013-09-10T09:26:00.000Z</published>
+    <updated>2019-02-22T12:54:36.556Z</updated>
+    
+    <content type="html"><![CDATA[<p>EasyUI Accordion 下面的 Panel 有一个属性 <code>selected</code>，默认值为 <code>false</code> ；若设置为 <code>true</code>，则面板默认展开：</p><script src="https://gist.github.com/luotaoyeah/a10bbbb23846fff982488b6019accab8.js"></script><p><img src="/images/easyui-accordion-panel-collapse/easyui-accordion-panel-collapse-001.png" alt></p><p>若多个 Panel 的 <code>selected</code> 都设置为 <code>true</code>，或者都设置为 <code>false</code>，则默认展开第一个 Panel；即默认情况下始终有一个面板是展开的，要想初始化时，面板全部折叠，找到的一个解决方法如下：</p><blockquote><p>注释掉 <code>jquery.easyui.min.js</code> 第 3704 行的 <code>_2a0(0);</code></p></blockquote><p><em>注：本文 easyui 版本为 <code>1.3.4</code></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;EasyUI Accordion 下面的 Panel 有一个属性 &lt;code&gt;selected&lt;/code&gt;，默认值为 &lt;code&gt;false&lt;/code&gt; ；若设置为 &lt;code&gt;true&lt;/code&gt;，则面板默认展开：&lt;/p&gt;
+&lt;script src=&quot;https://
+      
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://luotao.me/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="easyui" scheme="http://luotao.me/tags/easyui/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MS SQL Server 2012 不允许保存更改</title>
+    <link href="http://luotao.me/2012/08/10/ms-sql-server-cant-save/"/>
+    <id>http://luotao.me/2012/08/10/ms-sql-server-cant-save/</id>
+    <published>2012-08-10T08:56:02.000Z</published>
+    <updated>2018-04-07T01:40:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>在 MS SQL Server 2012 中更改表的设计并保存时出现以下提示：</p><p><img src="/images/ms-sql-server-cant-save/ms-sql-server-cant-save-01.png" alt></p><h2 id="2-解决"><a href="#2-解决" class="headerlink" title="2. 解决"></a>2. 解决</h2><p>取消勾选”阻止保存要求重新创建表的更改”选项；</p><p><img src="/images/ms-sql-server-cant-save/ms-sql-server-cant-save-02.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h2&gt;&lt;p&gt;在 MS SQL Server 2012 中更改表的设计并保存时出现以下提示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/im
+      
+    
+    </summary>
+    
+      <category term="SQL SERVER" scheme="http://luotao.me/categories/SQL-SERVER/"/>
+    
+    
+      <category term="sql server" scheme="http://luotao.me/tags/sql-server/"/>
+    
+      <category term="sql" scheme="http://luotao.me/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MS SQL Server 2012 添加 northwind 和 pubs 示例数据库</title>
+    <link href="http://luotao.me/2012/02/25/ms-sql-server-add-sample-db/"/>
+    <id>http://luotao.me/2012/02/25/ms-sql-server-add-sample-db/</id>
+    <published>2012-02-25T03:46:02.000Z</published>
+    <updated>2018-04-08T02:43:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>默认情况，Microsoft SQL Server 中没有安装 northwind 和 pubs 示例数据库，而在学习 SQL 的时候这两个示例数据库非常有用，我们可以自己下载安装；</p><p>下载 <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=23654" target="_blank" rel="noopener">SQL2000SampleDb.msi</a> 并安装，在 C 盘生成以下目录：</p><p><img src="/images/ms-sql-server-add-sample-db/ms-sql-server-add-sample-db-01.jpg" alt></p><h2 id="2-测试"><a href="#2-测试" class="headerlink" title="2. 测试"></a>2. 测试</h2><p>附加这两个数据库，并测试：</p><p><img src="/images/ms-sql-server-add-sample-db/ms-sql-server-add-sample-db-02.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h2&gt;&lt;p&gt;默认情况，Microsoft SQL Server 中没有安装 northwind 和 pubs 示例数据库，而在学习 
+      
+    
+    </summary>
+    
+      <category term="SQL SERVER" scheme="http://luotao.me/categories/SQL-SERVER/"/>
+    
+    
+      <category term="sql server" scheme="http://luotao.me/tags/sql-server/"/>
+    
+      <category term="northwind" scheme="http://luotao.me/tags/northwind/"/>
+    
+  </entry>
+  
+</feed>

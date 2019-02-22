@@ -11,9 +11,9 @@ date: 2018-02-01 21:08:02
 
 ## 0. 环境
 
-* macOS v10.13.3
-* Homebrew v1.6.0
-* MySQL v5.7.21
+- macOS v10.13.3
+- Homebrew v1.6.0
+- MySQL v5.7.21
 
 ## 1. 安装 Homebrew
 

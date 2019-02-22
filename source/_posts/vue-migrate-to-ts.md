@@ -21,9 +21,10 @@ JavaScript 自有其作为动态语言的优势，但在面对增长越来越快
 ## 2. 原理
 
 在原有的基于 webpack 打包构建的流程之上，引入单独的处理器对 TypeScript 文件进行处理，实现 js 文件与 ts 文件共存且分别进行处理，从而实现 JavaScript 到 TypeScript 的逐步迁移。经过改造之后的项目将具备以下特性：
-* js 文件和 ts 文件可以共存，互不影响；
-* js 模块和 ts 模块可以相互引用；
-* 支持单文件组件（SFC）迁移到 ts；
+
+- js 文件和 ts 文件可以共存，互不影响；
+- js 模块和 ts 模块可以相互引用；
+- 支持单文件组件（SFC）迁移到 ts；
 
 ## 3. 配置
 
@@ -33,8 +34,8 @@ JavaScript 自有其作为动态语言的优势，但在面对增长越来越快
 
 #### 3.2. 修改 webpack 配置
 
-* `resolve.extensions` 添加 `.ts`；
-* 针对 ts 文件添加一个 `rule`；
+- `resolve.extensions` 添加 `.ts`；
+- 针对 ts 文件添加一个 `rule`；
 
 <script src="https://gist.github.com/luotaoyeah/655ce5ad5ad942b14eec106e7259f74c.js"></script>
 
@@ -52,24 +53,26 @@ JavaScript 自有其作为动态语言的优势，但在面对增长越来越快
 
 #### 3.4. 添加类型定义文件
 
-* 在根目录新建文件夹 `types`，用来存放类型定义文件；
-* 添加类型定义文件 `shim-vue.d.ts`：
-<script src="https://gist.github.com/luotaoyeah/c38cc6de04d5b0392828ad28bb7c6269.js"></script>
+- 在根目录新建文件夹 `types`，用来存放类型定义文件；
+- 添加类型定义文件 `shim-vue.d.ts`：
+  <script src="https://gist.github.com/luotaoyeah/c38cc6de04d5b0392828ad28bb7c6269.js"></script>
 
 ## 4. 迁移
 
 #### 4.1. js 文件
 
 对于 js 文件，
-* 将文件后缀修改为 `.ts`；
-* 将 js 代码重构为 ts 代码；
+
+- 将文件后缀修改为 `.ts`；
+- 将 js 代码重构为 ts 代码；
 
 #### 4.2. vue 文件
 
 对于 vue 文件，
-* 将 script 标签中的 js 代码分离到单独的 `.ts` 文件；
-* 将 js 代码重构为 ts 代码；
-* 在 vue 文件引入该 `.ts` 文件；
+
+- 将 script 标签中的 js 代码分离到单独的 `.ts` 文件；
+- 将 js 代码重构为 ts 代码；
+- 在 vue 文件引入该 `.ts` 文件；
 
 ![](/images/vue-migrate-to-ts/vue-migrate-to-ts-01.png)
 ![](/images/vue-migrate-to-ts/vue-migrate-to-ts-02.png)

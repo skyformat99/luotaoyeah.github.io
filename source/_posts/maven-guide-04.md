@@ -6,4 +6,4 @@ categories:
 tags: maven
 ---
 
-> [Maven入门指南④：仓库 - 罗韬 - 博客园](http://www.cnblogs.com/luotaoyeah/p/3785044.html)
+> [Maven 入门指南 ④：仓库 - 罗韬 - 博客园](http://www.cnblogs.com/luotaoyeah/p/3785044.html)

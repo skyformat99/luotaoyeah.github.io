@@ -40,18 +40,20 @@ tags:
 
 ## 5. 参数说明
 
-* `uploader: '/article/upload'`  请求地址，对应后端进行处理的 Action；
-* `formData:{ "imgType": "normal" }`  动态设置表单数据，一般在 `onUploadStart` 事件中进行处理：
-<script src="https://gist.github.com/luotaoyeah/933a1f8c398bf668811b336aa14d489f.js"></script>
+- `uploader: '/article/upload'` 请求地址，对应后端进行处理的 Action；
+- `formData:{ "imgType": "normal" }` 动态设置表单数据，一般在 `onUploadStart` 事件中进行处理：
 
-    如果参数名与初始化的 formData 中的参数名一样，参数值将被覆盖，否则添加；在开始上传之前执行动态设置都是可以的，例如在两个 checkbox（使用 bootstrap-switch 插件）的状态切换时进行设置：
-<script src="https://gist.github.com/luotaoyeah/6d815bb02ea2202442719dcae7cddd11.js"></script>
+  <script src="https://gist.github.com/luotaoyeah/933a1f8c398bf668811b336aa14d489f.js"></script>
 
+      如果参数名与初始化的 formData 中的参数名一样，参数值将被覆盖，否则添加；在开始上传之前执行动态设置都是可以的，例如在两个 checkbox（使用 bootstrap-switch 插件）的状态切换时进行设置：
+
+  <script src="https://gist.github.com/luotaoyeah/6d815bb02ea2202442719dcae7cddd11.js"></script>
 
 * `onUploadSuccess` 事件处理函数的 3 个参数：
-    * `file` 包含原始文件的信息；
-    * `response`  后台返回（true 或 false）；
-    * `data`  后台返回数据，试例中为 JSON 对象；
+
+  - `file` 包含原始文件的信息；
+  - `response` 后台返回（true 或 false）；
+  - `data` 后台返回数据，试例中为 JSON 对象；
 
 * 其他详细参数，请参考官方文档：[http://www.uploadify.com/documentation/](http://www.uploadify.com/documentation/)
 

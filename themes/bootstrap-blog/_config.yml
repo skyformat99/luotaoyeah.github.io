@@ -11,11 +11,11 @@ fancybox: true
 
 # Sidebar
 widgets:
-- about         # See also: `about_content`
-- category
-- tag
-#- tagcloud
-- archive
+  - about # See also: `about_content`
+  - category
+  - tag
+  #- tagcloud
+  - archive
 #- recent_posts
 about_widget_content: >
   luotao
@@ -23,7 +23,7 @@ about_widget_content: >
   <a href="mailto:luotaoyeah@gmail.com">luotaoyeah@gmail.com</a>
 
 # widget behavior
-archive_type: 'yearly'
+archive_type: "yearly"
 show_count: false
 
 # Miscellaneous

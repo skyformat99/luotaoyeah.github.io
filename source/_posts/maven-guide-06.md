@@ -6,4 +6,4 @@ categories:
 tags: maven
 ---
 
-> [Maven入门指南⑥：将项目发布到私服 - 罗韬 - 博客园](http://www.cnblogs.com/luotaoyeah/p/3817465.html)
+> [Maven 入门指南 ⑥：将项目发布到私服 - 罗韬 - 博客园](http://www.cnblogs.com/luotaoyeah/p/3817465.html)
